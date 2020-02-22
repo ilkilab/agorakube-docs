@@ -16,18 +16,21 @@ Channels :
 
 ## Set up a local test lab
 
-You can set a local test lab for Agorakube using Git and Docker
+You can, for exemple, set a local test lab for Agorakube-docs using Git and Docker.
+
+
+1) SetUp the dev environment:
+```
+git clone https://github.com/ilkilab/agorakube-docs.git
+docker run -d -p 80:80 --mount type=bind,source="$(pwd)"/agorakube-docs/www/,target=/var/site agorakube/test-agorakube-docs:v1
+```
+2) Open your Browser and go to http://[IP_DOCKER_NODE]
+
+3) Edit files under ./agorakube-docs/www/. Website will be automatically updated.
 
 ## Sample needs
 
 All contributions are welcome :)
-
-Here is a non-exhaustive list of contributions needed for this project:
-
-* Documentation
-* Add features like new runtime support, new Ingress Controller installation, new CNI plugin, etc...
-* Improve the code quality
-* ...
 
 ## Submitting changes
 
