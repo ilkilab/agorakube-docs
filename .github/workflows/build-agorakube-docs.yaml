@@ -1,0 +1,13 @@
+name: build-agorakube-docs
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+    name: A job to build Agorakube documentation when new release is published
+    steps:
+    - name: build agorakube documentation
+      uses: ./actions/build-docs
