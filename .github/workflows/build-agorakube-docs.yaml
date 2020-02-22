@@ -10,4 +10,8 @@ jobs:
     name: A job to build Agorakube documentation when new release is published
     steps:
     - name: build agorakube documentation
+      env: # Or as an environment variable
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       uses: ./actions/build-docs
