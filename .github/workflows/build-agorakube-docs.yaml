@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to build Agorakube documentation when new release is published
     steps:
+    - name: Checkout
+      uses: actions/checkout@v1
     - name: build agorakube documentation
       env: # Or as an environment variable
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
