@@ -2,6 +2,8 @@
 
 Welcome to the Agorakube documentation !
 
+This WebSite is related to [Agorakube](https://github.com/ilkilab/agorakube) project.
+
 This repository houses all of the assets required to build the Agorakube documentation website. We're glad that you want to contribute!
 
 ## How to contribute
