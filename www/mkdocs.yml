@@ -2,4 +2,4 @@ site_name: AgoraKube
 nav:
     - Home: index.md
     - About: about.md
-theme: readthedocs
+theme: mkdocs
