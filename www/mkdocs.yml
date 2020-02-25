@@ -9,7 +9,7 @@ nav:
     - Agorakube: index.md
     - User Guide:
         - Quickstart: main/main.md
-        - Styling Your Docs: user-guide/styling-your-docs.md
+        - Instructions: main/instructions.md
         - Configuration: user-guide/configuration.md
         - Deploying Your Docs: user-guide/deploying-your-docs.md
         - Custom Themes: user-guide/custom-themes.md
