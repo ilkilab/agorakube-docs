@@ -10,10 +10,10 @@ nav:
     - User Guide:
         - Quickstart: main/main.md
         - Instructions: main/instructions.md
-        - Configuration: user-guide/configuration.md
-        - Deploying Your Docs: user-guide/deploying-your-docs.md
-        - Custom Themes: user-guide/custom-themes.md
-        - Plugins: user-guide/plugins.md
+        - Configuration: main/configurations.md
+        - Parameters: main/parameters.md
+    - Tutorials:
+        - Deploy Agorakube: tuto/demo.md
     - About:
         - Release Notes: about/release-notes.md
         - Contributing: about/contributing.md
