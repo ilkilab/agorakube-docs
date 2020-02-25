@@ -15,6 +15,7 @@ This section is used to custom certificates information.
 | `expiry` | Certificate lifetime in hours | <ul><li> **Depend on your needs** </li><br/><li>  **87600h** *(default)* </li></ul>|
 | `rotate_full_pki` | Update all the PKI (crts, keys and crs) of your cluster. You will need to regenerate manually your Service Account Tokens, and relaunch all pods that are using them | <ul><li> **false** *(default)* </li><br/><li>  **true** </li></ul>|
 | `rotate_certs_pki` | Rotate certificates for your cluster | <ul><li> **false** *(default)* </li><br/><li>  **true** </li></ul>|
+
 ### Components version section
 
 This section is used to custom the components version of your deployment.
