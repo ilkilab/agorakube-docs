@@ -30,3 +30,11 @@ markdown_extensions:
       guess_lang: false
   - toc:
       permalink: true
+extra:
+  social:
+    - type: 'github'
+      link: 'https://github.com/ilkilab/agorakube'
+    - type: 'twitter'
+      link: 'https://twitter.com/ClouDesigner'
+    - type: 'linkedin'
+      link: 'https://www.linkedin.com/company/ilki'

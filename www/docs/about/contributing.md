@@ -9,10 +9,11 @@ You can contact us by mail agorakube@ilki.fr.
 Or you can join Agorakube's community for discussion and ask questions : [Agorakube's Slack](http://slack.agorakube.ilkilabs.io/)
 
 Channels :
-- **#general** - For general purpose (news, events...)
-- **#developpers** - For people who contribute to Agorakube by developing features
-- **#end-users** - For end users who want to give us feedbacks
-- **#random** - As its name suggests, for random discussions :)
+
+* **#general** - For general purpose (news, events...)
+* **#developpers** - For people who contribute to Agorakube by developing features
+* **#end-users** - For end users who want to give us feedbacks
+* **#random** - As its name suggests, for random discussions :)
 
 ## Set up a local test lab
 
