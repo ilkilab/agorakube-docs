@@ -1,0 +1,12 @@
+<div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+          <a href="https://github.com/ilkilab/agorakube" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/ilkilab/agorakube" class="icon icon-gitlab" style="float: left; color: #fcfcfc"> GitLab</a>
+      {% if page.previous_page %}
+        <span><a href="{{ page.previous_page.url|url }}" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      {% endif %}
+      {% if page.next_page %}
+        <span style="margin-left: 15px"><a href="{{ page.next_page.url|url }}" style="color: #fcfcfc">Next &raquo;</a></span>
+      {% endif %}
+    </span>
+</div>
