@@ -4,7 +4,7 @@ repo_url: https://github.com/ilkilab/agorakube-docs
 repo_name: GitHub
 edit_uri: https://github.com/ilkilab/agorakube-docs/tree/master/www/docs
 site_description: This site provide a full documentation of Agorakube Kubernetes Distribution.
-copyright: Copyright  &#169; 2020  <a href="https://twitter.com/ClouDesigner">ILKI - ILKILABS</a>
+copyright: Copyright  &#169; 2020  <a href="https://www.ilki.fr/">ILKI - ILKILABS</a>
 nav:
     - Agorakube: index.md
     - User Guide:
