@@ -28,8 +28,9 @@ This section explains what are the prerequisites to install AgoraKube in your en
 ## OS
 
 Below the OS currently supported on all the machines :
-  - Ubuntu 18.04 (Bionic) - amd64
-  - Centos 7 & 8 - amd64
+
+* Ubuntu 18.04 (Bionic) - amd64
+* Centos 7 & 8 - amd64
   
 ## Node Sizing
 
@@ -69,8 +70,9 @@ bash <(curl -s https://raw.githubusercontent.com/ilkilab/agorakube/master/setup-
 The K8S nodes will host all the components needed for a Kubernetes cluster Control and Data planes.
 
 The prerequisites are:
-- SSH Server (like Openssh)
-- Python2
+
+* SSH Server (like Openssh)
+* Python2
 
 You can run the following command to automatically install those packages :
 ```

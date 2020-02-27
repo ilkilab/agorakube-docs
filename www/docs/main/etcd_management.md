@@ -8,8 +8,10 @@ You can backup ETCD cluster from Agorakube racine directory by following the nex
 sudo ansible-playbook tools/etcd/backup-etcd-cluster.yaml
 ```
 
-Backup file will be saved on the **deploy** machine located in the following path: ```{{data_path}}/backups_etcd/``` --- If you wish to customize the backup path, set the following variable in ```group_vars/all.yaml``` file: ``` custom_etcd_backup_dir: 
-/path/to/store/backups/on/deploy/machine ```
+Backup file will be saved on the **deploy** machine located in the following path: ```{{data_path}}/backups_etcd/```
+
+If you wish to customize the backup path, set the following variable in ```group_vars/all.yaml``` file:
+``` custom_etcd_backup_dir: /path/to/store/backups/on/deploy/machine ```
 
 # Restore etcd cluster
 

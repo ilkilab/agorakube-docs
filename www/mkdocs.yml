@@ -13,10 +13,10 @@ nav:
         - Configuration: main/configurations.md
         - Parameters: main/parameters.md
         - Manage ETCD: main/etcd_management.md
-#    - Tutorials:
-#        - Deploy Agorakube: tuto/demo.md
+    - Tutorials:
+        - Deploy Agorakube VirtualBox: tutorials/deploy_agorakube.md
     - About:
-#        - Release Notes: about/release-notes.md
+#       - Release Notes: about/release-notes.md
         - Contributing: about/contributing.md
         - License: about/license.md
 theme:
