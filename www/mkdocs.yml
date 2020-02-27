@@ -12,6 +12,7 @@ nav:
         - Instructions: main/instructions.md
         - Configuration: main/configurations.md
         - Parameters: main/parameters.md
+        - Manage ETCD: main/etcd_management.md
 #    - Tutorials:
 #        - Deploy Agorakube: tuto/demo.md
     - About:

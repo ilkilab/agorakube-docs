@@ -1,10 +1,7 @@
-# K8S Cluster Configuration
+# Inventory file
 
 AgoraKube enables an easy way to deploy and manage customizable K8S clusters.
-
-## Inventory file
-
-The first file to modify is ["./hosts"](../hosts). This file contains all architecture information about your K8S Cluster.
+The first file to modify is **"./hosts"**. This file contains all architecture information about your K8S Cluster.
 
 **All K8S servers names must be filled in by their FQDN.**
 
@@ -52,9 +49,9 @@ The **all:vars** section contains information about how to connect to K8S nodes.
 The **SSH Connection settings** section contain information about the SSH connexion. You have to modify the variable **ansible_ssh_private_key_file** with the path where your public key is stored.
 **ansible_user** User used as service account by Agorakube to connect to all nodes. **User must be sudoer**.
 
-## Configuration file
+# Configuration file
 
-The [../group_vars/all.yaml](../group_vars/all.yaml) file contains all configuration variables that you can customize to make your K8S Cluster fit your needs.
+The **"./group_vars/all.yaml"** file contains all configuration variables that you can customize to make your K8S Cluster fit your needs.
 
 Sample file will deploy **containerd** as container runtime, **flannel** as CNI plugin and **coredns** as DNS service : 
 
