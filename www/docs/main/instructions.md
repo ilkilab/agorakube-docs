@@ -15,13 +15,14 @@ This is a list of points that will be explained in this instructions file for th
 Below a diagram of the high-level architecture deployed by AgoraKube :
 ![Architecture](../images/AgoraKube_diagram.png)
 
-**Notes :** This distibution is aimed to be customizable so you can choose : 
- - Where the **etcd** will be deployed (with the master or not) 
- - The number of **master** nodes to deploy (from 1 to many)
- - The number of **etcd** nodes to deploy (from 1 to many)
- - The number of **worker** nodes to deploy (from 1 to many)
+**Notes :** This distibution is aimed to be customizable so you can choose :
  
- # Prerequisites
+* Where the **etcd** will be deployed (with the master or not) 
+* The number of **master** nodes to deploy (from 1 to many)
+* The number of **etcd** nodes to deploy (from 1 to many)
+* The number of **worker** nodes to deploy (from 1 to many)
+ 
+# Prerequisites
 
 This section explains what are the prerequisites to install AgoraKube in your environment.
 
@@ -34,19 +35,21 @@ Below the OS currently supported on all the machines :
 ## Node Sizing
 
 Below the sizing prerequisites for all the nodes (master and worker) :
-- 2 GB or more of RAM per machine
-- 2 CPUs or more
-- Full network connectivity between all machines in the cluster (public or private network is fine)
-- Full internet access
-- Unique hostname, MAC address, and product_uuid for every node. See here for more [details](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#verify-the-mac-address-and-product-uuid-are-unique-for-every-node).
-- Certain ports are open on your machines. See here for more [details](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#check-required-ports).
-- Swap disabled. You MUST disable swap in order for the kubelet to work properly.
+
+* 2 GB or more of RAM per machine
+* 2 CPUs or more
+* Full network connectivity between all machines in the cluster (public or private network is fine)
+* Full internet access
+* Unique hostname, MAC address, and product_uuid for every node. See here for more [details](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#verify-the-mac-address-and-product-uuid-are-unique-for-every-node).
+* Certain ports are open on your machines. See here for more [details](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#check-required-ports).
+* Swap disabled. You MUST disable swap in order for the kubelet to work properly.
 
 Below the sizing prerequisites for the deployment machine :
-- 2 GB or more of RAM
-- 1 CPU or more
-- Full network connectivity between all machines in the cluster (public or private network is fine)
-- Full internet access
+
+* 2 GB or more of RAM
+* 1 CPU or more
+* Full network connectivity between all machines in the cluster (public or private network is fine)
+* Full internet access
 
 # Nodes Setup
 
