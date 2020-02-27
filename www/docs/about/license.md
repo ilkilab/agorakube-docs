@@ -1,4 +1,6 @@
-Agorakube is under Apache2 License:
+All material here is released under the APACHE 2.0 license. All material that is not executable, including all text when not executed, is also released under the APACHE 2.0. In SPDX terms, everything here is licensed under APACHE 2.0; if it's not executable, including the text when extracted from code, it's "(APACHE 2.0)".
+
+Like almost all software today, this software depends on many other components with their own licenses. Not all components we depend on are APACHE 2.0-licensed, but all required components are FLOSS.
 
 ```txt
                                  Apache License
