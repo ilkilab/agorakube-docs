@@ -18,7 +18,6 @@ Channels :
 ## Set up a local test lab
 
 You can set a local test lab for Agorakube using Vagrant and VirtualBox.
-See [LOCAL_ENVIRONMENT](../LOCAL_ENVIRONMENT.md) for more details.
 
 ## Testing
 
