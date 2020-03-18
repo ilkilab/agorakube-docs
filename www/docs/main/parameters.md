@@ -71,10 +71,9 @@ Parameters for Calico CNI plugin :
 | `calico_mtu` | MTU size to used in your deployment | <ul><li> **Depend on your needs** </li><br/><li>  **1440** *(default)* </li></ul>|
 
 Parameters for etcd :
-
 | Parameter | Description | Values |
 | --- | --- | --- |
-| `encrypt_key_etcd` | Encryption key to use for etcd datas | <ul><li> **Depend on your deployment** </li><br/><li>  **1fJcKt6vBxMt+AkBanoaxFF2O6ytHIkETNgQWv4b/+Q=** *(default)* </li></ul> |
+| `encrypt_etcd_keys` | Encryption keys used for etcd - Dictionary Format | <ul><li> **Depend on your deployment** </li><br/><li>  **1fJcKt6vBxMt+AkBanoaxFF2O6ytHIkETNgQWv4b/+Q=** *(default)* </li></ul> |
 | `check_etcd_install` | Display ETCD infos | <ul><li> **True** (Default) </li><br/><li>  False </li></ul> |
 
 Parameters for Agorakube datas storage :
