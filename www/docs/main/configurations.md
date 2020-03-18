@@ -100,7 +100,9 @@ install_kubeapps: false
 calico_mtu: 1440
 
 # Security
-encrypt_key_etcd: 1fJcKt6vBxMt+AkBanoaxFF2O6ytHIkETNgQWv4b/+Q=
+encrypt_etcd_keys: 
+  key1:
+    secret: 1fJcKt6vBxMt+AkBanoaxFF2O6ytHIkETNgQWv4b/+Q=
 
 # Data Directory
 data_path: "/var/agorakube"
