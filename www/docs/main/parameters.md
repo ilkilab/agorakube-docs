@@ -90,4 +90,9 @@ Parameters for etcd data location, and backups
 | `custom_etcd_backup_dir` | Directory where etcd leader backups are stored on **deploy** node | <ul><li> **{{data_path}}/backups_etcd/** (default if not defined) </li><br/></ul> |
 | `restoration_snapshot_file` | Path to the etcd snapshot on **deploy** node | <ul><li> **not defined** (default) </li><br/></ul> |
 
+Rook Settings
 
+| Parameter | Description | Values |
+| --- | --- | --- |
+| `enable_rook` | Deploy Rook Ceph cluster on on **storage members** | <ul><li> **False** (default) </li><br/><li>  **true** </li></ul> |
+| `rook_dataDirHostPath` | Directory where Rook data are stored on **Storage** nodes | <ul><li> **/data/rook** (default) </li><br/></ul> |
