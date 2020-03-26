@@ -1,6 +1,6 @@
 # What is AgoraKube
 
-AgoraKube is an easy-to-use, stable Kubernetes distribution (Kubernetes v1.15, 1.16, 1.17). 
+AgoraKube is an easy-to-use, stable Kubernetes distribution (Kubernetes v1.15, 1.16, 1.17, 1.18). 
 
 By its symplicity, AgoraKube provide a good way to deploy and manage K8S Clusters.
 
@@ -18,7 +18,8 @@ This distribution is also adaptive by offering the opportunity to customize your
 * etcd release
 * Helm
 * Kubeapps
-* ... 
+* Rook
+* ...
 
 This project is currently under active development so other customizable options will be added soon.
 
