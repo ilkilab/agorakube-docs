@@ -71,6 +71,7 @@ Parameters for Calico CNI plugin :
 | `calico_mtu` | MTU size to used in your deployment | <ul><li> **Depend on your needs** </li><br/><li>  **1440** *(default)* </li></ul>|
 
 Parameters for etcd :
+
 | Parameter | Description | Values |
 | --- | --- | --- |
 | `encrypt_etcd_keys` | Encryption keys used for etcd - Dictionary Format | <ul><li> **Depend on your deployment** </li><br/><li>  **1fJcKt6vBxMt+AkBanoaxFF2O6ytHIkETNgQWv4b/+Q=** *(default)* </li></ul> |
