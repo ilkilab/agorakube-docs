@@ -15,15 +15,14 @@ This section is used to custom certificates information.
 | `expiry` | Certificate lifetime in hours | <ul><li> **Depend on your needs** </li><br/><li>  **87600h** *(default)* </li></ul>|
 | `rotate_full_pki` | Update all the PKI (crts, keys and crs) of your cluster. You will need to regenerate manually your Service Account Tokens, and relaunch all pods that are using them | <ul><li> **false** *(default)* </li><br/><li>  **true** </li></ul>|
 | `rotate_certs_pki` | Rotate certificates for your cluster | <ul><li> **false** *(default)* </li><br/><li>  **true** </li></ul>|
-
 ### Components version section
 
 This section is used to custom the components version of your deployment.
 
 | Parameter | Description | Values |
 | --- | --- | --- |
-| `etcd_release` | Version of etcd component | <ul><li> **3.3.X** or **3.4.X** </li><br/><li>  **3.4.3** *(default)* </li></ul>|
-| `kubernetes_release` | Version of kubernetes components | <ul><li> **1.15.X**, **1.16.X** or **1.17.X** </li><br/><li>  **1.17.1** *(default)* </li></ul>|
+| `etcd_release` | Version of etcd component | <ul><li> **3.3.X** or **3.4.X** </li><br/><li>  **3.4.5** *(default)* </li></ul>|
+| `kubernetes_release` | Version of kubernetes components | <ul><li> **1.15.X**, **1.16.X**, **1.17.X** or **1.18.X** </li><br/><li>  **1.18.0** *(default)* </li></ul>|
 | `delete_previous_k8s_install` | Deletion of previous installations of Kubernetes | <ul><li> **true** </li><br/><li>  **false** *(default)* </li></ul>|
 
 ### IPs-CIDR Configurations
@@ -48,15 +47,15 @@ This section is used to defined all custom features of your deployment.
 
 | Parameter | Description | Values |
 | --- | --- | --- |
-| `runtime` | Container runtime used in your deployment | <ul><li> **ContainerD** *(default)* </li><br/><li>  **Docker**  </li></ul>|
-| `network_cni_plugin` | CNI plugin used in your deployment | <ul><li> **Calico** </li><br/><li>  **Flannel** *(default)* </li></ul>|
+| `runtime` | Container runtime used in your deployment | <ul><li> **containerd** *(default)* </li><br/><li>  **docker**  </li></ul>|
+| `network_cni_plugin` | CNI plugin used in your deployment | <ul><li> **calico** </li><br/><li> **flannel** </li><br/><li>  **kube-router** *(default)* </li></ul>|
 | `flannel_iface` | Indicate to Flannel the specific iface to be binded | <ul><li> **default** *(default - take the first iface)* </li><br/><li>  **Specific Iface**</li></ul>|
-| `ingress_controller` | Ingress Controller used in your deployment | <ul><li> **Traefik** *(default)* </li><br/><li>  **HAProxy**  </li><br/><li>  **nginx**  </li><br/><li>  **none**  </li></ul>|
+| `ingress_controller` | Ingress Controller used in your deployment | <ul><li> **traefik** *(default)* </li><br/><li>  **ha-proxy**  </li><br/><li>  **nginx**  </li><br/><li>  **none**  </li></ul>|
 | `dns_server_soft` | DNS service used in your deployment | <ul><li> **CoreDNS** *(default)* </li></ul>|
 | `label_workers` | Fixed the label *node-role.kubernetes.io/worker* to all workers in your cluster | <ul><li> **false** </li><br/><li>  **true** *(default)* </li></ul>|
 | `populate_etc_hosts` | Populate */etc/hosts* file of all your nodes in the cluster | <ul><li> **no** </li><br/><li>  **yes** *(default)* </li></ul>|
 | `k8s_dashboard` | Deploy Kubernetes dashboard in your cluster | <ul><li> **false** </li><br/><li>  **true** *(default)* </li></ul>|
-| `service_mesh` | Service mesh used in your cluster | <ul><li> **LinkerD** *(default)* </li><br/><li>  **none** </li></ul>|
+| `service_mesh` | Service mesh used in your cluster | <ul><li> **none** *(default)* </li><br/><li>  **linkerd** </li></ul>|
 | `linkerd_release` | Version of LinkerD used in your cluster | <ul><li> **stable-2.6.0** *(default)* </li><br/><li>  **none** </li></ul>|
 | `install_helm` | Helm installation in your cluster | <ul><li> **false** *(default)* </li><br/><li>  **true** </li></ul>|
 | `init_helm` | Initialization of Helm | <ul><li> **false** *(default)* </li><br/><li>  **true** </li></ul>|
@@ -74,7 +73,7 @@ Parameters for etcd :
 
 | Parameter | Description | Values |
 | --- | --- | --- |
-| `encrypt_etcd_keys` | Encryption keys used for etcd - Dictionary Format | <ul><li> **Depend on your deployment** </li><br/><li>  **1fJcKt6vBxMt+AkBanoaxFF2O6ytHIkETNgQWv4b/+Q=** *(default)* </li></ul> |
+| `encrypt_etcd_keys` | Encryption keys used for etcd - Dictionary format | <ul><li> **Depend on your deployment** </li><br/><li>  **1fJcKt6vBxMt+AkBanoaxFF2O6ytHIkETNgQWv4b/+Q=** *(default)* </li></ul> |
 | `check_etcd_install` | Display ETCD infos | <ul><li> **True** (Default) </li><br/><li>  False </li></ul> |
 
 Parameters for Agorakube datas storage :
@@ -91,12 +90,32 @@ Parameters for etcd data location, and backups
 | `custom_etcd_backup_dir` | Directory where etcd leader backups are stored on **deploy** node | <ul><li> **{{data_path}}/backups_etcd/** (default if not defined) </li><br/></ul> |
 | `restoration_snapshot_file` | Path to the etcd snapshot on **deploy** node | <ul><li> **not defined** (default) </li><br/></ul> |
 
-Rook Settings:
+Rook Settings
 
 | Parameter | Description | Values |
 | --- | --- | --- |
-| `enable_rook` | Deploy Rook Ceph cluster on on **storage members** | <ul><li> **False** (default) </li><br/><li>  **true** </li></ul> |
+| `enable_rook` | Deploy Rook Ceph cluster on **storage members** | <ul><li> **False** (default) </li><br/><li>  **True** </li></ul> |
 | `rook_dataDirHostPath` | Directory where Rook data are stored on **Storage** nodes | <ul><li> **/data/rook** (default) </li><br/></ul> |
+| `enable_rook_minio` | Deploy Rook MinIO cluster on **Rook Ceph Cluster** | <ul><li> **False** (default) </li><br/><li>  **True** </li></ul> |
+| `rook_minio_infra_access_key` | MinIO Admin Access Key | <ul><li> **admin_minio** (default) </li><br/></ul> |
+| `rook_minio_infra_secret_key` | MinIO Admin Secret Key | <ul><li> **password_minio** (default) </li><br/></ul> |
+
+
+Harbor Settings
+
+| Parameter | Description | Values |
+| --- | --- | --- |
+| `install_harbor` | Deploy Harbor Registry - Warrning : **Rook Must be enabled !** | <ul><li> **False** (default) </li><br/><li>  **true** </li></ul> |
+| `harbor_admin_password` | Admin password for Harbor UI | <ul><li> **ChangeMe!** (default) </li></ul> |
+| `harbor_ingress_host` | Host entry in Ingress. Harbor will be expose at **https://{{ harbor_ingress_host }}** (Depend on your ingress configuration) | <ul><li> harbor.ilkilabs.io (default) </li></ul> |
+| `notary_ingress_host` | Host entry in Ingress. Notary will be expose at **https://{{ notary.ilkilabs.io }}** (Depend on your ingress configuration) | <ul><li> **notary.ilkilabs.io** (default) </li></ul> |
+
+Monitoring Settings
+
+| Parameter | Description | Values |
+| --- | --- | --- |
+| `enable_monitoring` | Deploy monitoring - Warrning : **Rook Must be enabled !** | <ul><li> **False** (default) </li><br/><li>  **true** </li></ul> |
+
 
 Others settings:
 
