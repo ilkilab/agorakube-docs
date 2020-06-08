@@ -32,6 +32,7 @@ Below the OS currently supported on all the machines :
 
 * Ubuntu 18.04 (Bionic) - amd64
 * Centos 7 & 8 - amd64
+* Debian 10
   
 ## Node Sizing
 
@@ -152,6 +153,8 @@ The **masters** section contains information about the masters nodes (K8S Contro
 
 The **workers** section contains information about the workers nodes (K8S Data Plane).
 
+The **storage** section contains information about the storage nodes (K8S Storage Plane).
+
 The **all:vars** section contains information about how to connect to K8S nodes.
 
 The **SSH Connection settings** section contain information about the SSH connexion. You have to modify the variable **ansible_ssh_private_key_file** with the path where your public key is stored.
@@ -161,7 +164,7 @@ The **SSH Connection settings** section contain information about the SSH connex
 
 The **"./group_vars/all.yaml"** file contains all configuration variables that you can customize to make your K8S Cluster fit your needs.
 
-Sample file will deploy **containerd** as container runtime, **flannel** as CNI plugin and **coredns** as DNS service : 
+Sample file will deploy **containerd** as container runtime, **kube-router** as CNI plugin and **coredns** as DNS service : 
 
 ```
 ---
@@ -200,7 +203,7 @@ ingress_controller: traefik
 dns_server_soft: coredns
 populate_etc_hosts: yes
 k8s_dashboard: True
-service_mesh: linkerd
+service_mesh: none
 linkerd_release: stable-2.6.0
 install_helm: false
 init_helm: false
