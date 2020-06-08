@@ -148,6 +148,10 @@ etcd  ansible_host=10.0.0.13
 master  ansible_host=10.0.0.11
 worker  ansible_host=10.0.0.12
 
+[storage]
+master  ansible_host=10.0.0.11
+worker  ansible_host=10.0.0.12
+
 [all:vars]
 advertise_ip_masters=10.0.0.11
 ansible_ssh_extra_args='-o StrictHostKeyChecking=no'
@@ -166,6 +170,7 @@ You have below the file used for this tutorial:
 
 ```
 ---
+
 # CERTIFICATES
 cn_root_ca: ilkilabs
 c: FR
@@ -176,8 +181,8 @@ rotate_certs_pki: false
 rotate_full_pki: false
 
 # Components version
-etcd_release: v3.4.3
-kubernetes_release: v1.17.3
+etcd_release: v3.4.7
+kubernetes_release: v1.18.3
 delete_previous_k8s_install: False
 delete_etcd_install: False
 check_etcd_install: True
@@ -187,30 +192,32 @@ cluster_cidr: 10.33.0.0/16
 service_cluster_ip_range: 10.32.0.0/24
 kubernetes_service: 10.32.0.1
 cluster_dns_ip: 10.32.0.10
-service_node_port_range: 30000-32767
+service_node_port_range: 30000-32000
 kube_proxy_mode: ipvs
 kube_proxy_ipvs_algotithm: rr
-
+cni_release: 0.8.5
 
 # Custom features
 runtime: containerd
-network_cni_plugin: flannel
-flannel_iface: eth1
+network_cni_plugin: kube-router
+flannel_iface: default
 ingress_controller: traefik
 dns_server_soft: coredns
 populate_etc_hosts: yes
 k8s_dashboard: True
-service_mesh: linkerd
+service_mesh: none
 linkerd_release: stable-2.6.0
-install_helm: true
-init_helm: true
-install_kubeapps: false
+install_helm: False
+init_helm: False
+install_kubeapps: False
 
 # Calico
 calico_mtu: 1440
 
 # Security
-encrypt_etcd_keys: 
+encrypt_etcd_keys:
+# Warrning: If multiple keys are defined ONLY LAST KEY is used for encrypt and decrypt.
+# Other keys are used only for decrypt purpose
   key1:
     secret: 1fJcKt6vBxMt+AkBanoaxFF2O6ytHIkETNgQWv4b/+Q=
 
@@ -218,6 +225,55 @@ encrypt_etcd_keys:
 data_path: "/var/agorakube"
 etcd_data_directory: "/var/lib/etcd"
 #restoration_snapshot_file: /path/snopshot/file Located on {{ etcd_data_directory }}
+
+# KUBE-APISERVER spec
+kube_apiserver_enable_admission_plugins:
+# plugin AlwaysPullImage can be deleted. Credentials would be required to pull the private images every time. 
+# Also, in trusted environments, this might increases load on network, registry, and decreases speed.
+#  - AlwaysPullImages
+  - NamespaceLifecycle
+# EventRateLimit is used to limit DoS on API server in case of event Flooding
+  - EventRateLimit
+  - LimitRanger
+  - ServiceAccount
+  - TaintNodesByCondition
+  - PodNodeSelector
+  - Priority
+  - DefaultTolerationSeconds
+  - DefaultStorageClass
+  - StorageObjectInUseProtection
+  - PersistentVolumeClaimResize
+  - MutatingAdmissionWebhook
+  - NodeRestriction
+  - ValidatingAdmissionWebhook
+  - RuntimeClass
+  - ResourceQuota
+# SecurityContextDeny should be replaced by PodSecurityPolicy
+#  - SecurityContextDeny
+
+
+# Rook Settings
+enable_rook: False
+rook_dataDirHostPath: /data/rook
+
+# Minio Settings
+# Minio Key MUST BE Base64 encoded and Rook MUST be enabed.
+enable_rook_minio: False
+rook_minio_infra_access_key: admin_minio
+rook_minio_infra_secret_key: password_minio
+
+
+# Monitoring. Rook MUST be enabled to use monitoring (Monitoring use StorageClass to persist data)
+enable_monitoring: False
+
+
+# Enable Harbor Registry - Contain Chartmuseum, notary, clair, registry.
+# Harbor will be expose by HTTPS with Ingress Resource.
+# Rook MUST be enabled to use Harbor (Harbor use StorageClass to persist data)
+install_harbor: False
+harbor_ingress_host: harbor.ilkilabs.io
+notary_ingress_host: notary.ilkilabs.io
+harbor_admin_password: ChangeMe!
 ```
 
 # Deploy K8S with Agorakube
