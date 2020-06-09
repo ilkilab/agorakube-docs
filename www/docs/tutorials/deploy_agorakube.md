@@ -146,7 +146,7 @@ This file is composed of 6 parts:
 
 The last block **[all:vars]** is used to declare one IP that is used to publish K8S control plan. (In a production environment this IP is a LoadBalancer that announce K8S masters - port 6443). Other parametres in **[all:vars]** are used to specify how Agorakube/Ansible can connect to cluster machines.
 
-Below the original file from the project. You have to modify it with your own specification.
+Below the file used for this tutorial. You can modify it with your own specifications.
 
 ```ini
 [deploy]
