@@ -14,4 +14,4 @@ Agorakube install Hyper Customizable Kubernetes Clusters using native K8S binari
 
 Based on __Infrastructure As Code__ (IaC) Ansible playbooks and roles, Agorakube is very easy to understand, especially for SysOps guys.
 
-Currently, Ubuntu 18.04 (Bionic) amd64 and Centos 7/8 are supported, but several other operating systems will be available soon.
+Currently, Ubuntu 18.04, 20.04 amd64? Centos 7 and Debian 10 are supported, but several other operating systems will be available soon.
