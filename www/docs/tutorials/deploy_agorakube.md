@@ -81,10 +81,10 @@ If you want to use the same method of deployment as this tutorial follow those s
 	* To deploy with the Vagrantfile, create a file Vagrantfile (with no extension!) with the script below
 	* Open a command line in the path of this file
 	* Use the command ```vagrant up``` (it will start the installation of your machine)
-* You can connect to your VM using vagrant ssh nameofthemachine
-	* If you want to stop your cluster use the command vagrant halt
-	* If you want to delete a specific machine vagrant delete name of the machine
-	* You can also take snapshot of your VMs using vagrant snapshot commands
+* You can connect to your VM using ```vagrant ssh NameOfTheMachine```
+	* If you want to stop your cluster use the command ```vagrant halt -f```
+	* If you want to delete a specific machine ```vagrant delete -f NameOfTheMachine```
+	* If you want to delete your cluster ```vagrant delete -f ```
 
 > *"Note: All machines have to be able to communicate to each other."*
 
