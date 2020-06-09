@@ -324,6 +324,6 @@ By default, "kubectl" is configured **only for root user on deploy machine**
 
 2) Now, list all your nodes with the following command : ```kubectl get nodes -o wide```
 
-3) List all your pods with following command : ```kubectl get pods -o wide```
+3) List all your pods with following command : ```kubectl get pods --all-namespaces -o wide```
 
 4) List all your K8S control plan services with : ```kubectl get cs```
