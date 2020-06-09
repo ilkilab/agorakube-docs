@@ -10,12 +10,11 @@ If you want to deploy the same Kubernetes cluster as this tutorial you will need
 
 The cluster will be composed of 4 Virtual machines.
 
-* 1 machine Deploy that will be used as a deployment machine. With this machine, you can pilot your Kubernetes cluster if you want.
-* 1 machine master/worker, this machine will have the role of master and worker also
-* 1 machine worker
-* 1 machine etcd
+* 1 machine Deploy that will be used as a deployment machine. This machine is used to manage your K8S cluster.
+* 1 machine master/etcd
+* 2 machine worker/storage that are used as worker
 
-> *"Note: If you don't have enough RAM for this tutorial, we suggest deploying an all-in-one cluster (1 machine with all roles). A Vagrantfile is provided for this in the project Agorakube in **./test_lab**."*
+> *"Note: If you don't have enough RAM for this tutorial, we suggest deploying an all-in-one cluster (1 machine with all roles). A Vagrantfile is provided for this in the project Agorakube in **./test_lab**
 
 Below you have the Vagrantfile used for this tutorial. We are using 4 machines Ubuntu 18.04. You are free to change the OS to CentOS 7 if you want.
 
