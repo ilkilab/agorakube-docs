@@ -129,7 +129,10 @@ I suggest letting everything by default for this tutorial, so you will be able t
 By default ssh key pair is generated under "/home/YOUR_USER/.ssh/ . Private key is "id_rsa" and public key is "id_rsa.pub".
 
 Once you have created your SSH key pair, do not forget to push the public key (here id_rsa.pub) in the remote machines in /home/YOUR_USER/.ssh/authorized_keys file. You can use the following command from "deploy" machine to push your  SSH public key to other machines:
-```ssh-copy-id vagrant@IP``` (Replace IP with the IP of the remote Host). This command will copy the SSH public key located in ~/.ssh/id_rsa.pub to the file /home/vagrant/.ssh/authorized_keys located on the remote host.
+
+```ssh-copy-id vagrant@IP``` (Replace IP with the IP of the remote Host). 
+
+This command will copy the SSH public key located in ~/.ssh/id_rsa.pub to the file /home/vagrant/.ssh/authorized_keys located on the remote host.
 
 **The password for vagrant user is "vagrant".**
 
