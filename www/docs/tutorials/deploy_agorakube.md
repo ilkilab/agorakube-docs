@@ -95,26 +95,26 @@ The deploy machine has to be able to communicate by SSH with the others machines
 
 Now that all your nodes are running, you will be able to setup Agorakube.
 
-Connect to you "deploy" node and then run the following command:
+1) Connect to you "deploy" node using ```vagrant ssh deploy``` command and then run the following command:
 
 ```bash <(curl -s https://raw.githubusercontent.com/ilkilab/Agorakube/master/setup-deploy.sh)```
 
-This command will install Ansible and clone the repository on your current path.
+This command will install Ansible and clone the Agorakube repository on your current path.
 
-The second one must be applied to all other machines
+2) Next, connect to other Virtual Machines and run the following command on all machines.
 
 ```
 bash <(curl -s https://raw.githubusercontent.com/ilkilab/Agorakube/master/setup-hosts.sh)
 ```
 
-This command will update the machine and install the latest version of Python (Ansible needs Python and SSH to work).
+This command will update the machine and install the latest version of Python and Openssh-server (Ansible needs Python and SSH to work).
 
 
 # Create a pair of SSH keys
 
-Agorakube is using Ansible to deploy Kubernetes. Ansible is using an SSH connection to configure the other machines. For that you need the create SSH keys.
+Agorakube is using Ansible to deploy Kubernetes. Ansible needs an SSH connection to configure the other machines. For that you need to create SSH keys. Private key will stay on Deploy machine and public key will be deployed on all machines.
 
-On your deploy machine use this command:
+1) On your deploy machine use this command:
 
 ```
 ssh-keygen
@@ -123,14 +123,14 @@ ssh-keygen
 It will create a Pair of keys that you will use for you SSH connection
 
 
-I suggest letting everything by default for this tutorial, by letting everything by default you will be able to copy and paste most of the code provided in this tutorial.
+I suggest letting everything by default for this tutorial, so you will be able to copy and paste most of the code provided in this tutorial.
 
 Once you have created your pair of keys, do not forget to set the public key (here id_rsa.pub) in the other machine in /home/youruser/.ssh/authorized_keys or use ssh-copy-id (the password for vagrant user is vagrant)
 
 ## Modify the hosts file
 
-Now, you need to modify the hosts file of Agorakube. This s file is composed of 5 parts. The first one is the group deploy. In this group, you will declared you deploy machine to Ansible.
-The second is for declaring the master machines, the third is for etcd, the fourth is for worker and the fifth is for declaring 1 master IP that can be public or local and the SSH connection settings.
+Now, you need to modify the hosts file of Agorakube. This file is composed of 6 parts. The first one is the group deploy. In this group, you will declare your deploy machine.
+The second is for declaring the master machines, the third is for etcd, the fourth is for worker, the fifth is for declaring storage machines and the last is used to declare one IP that is used to publish K8S control plan. (In a production environment this IP is a LoadBalancer that announce K8S masters - port 6443)
 
 Below the original file from the project. You have to modify it with your own specification.
 
