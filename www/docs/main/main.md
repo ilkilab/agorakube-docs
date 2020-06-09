@@ -8,7 +8,7 @@ By its symplicity, [AgoraKube](https://agorakube.ilkilabs.io/) provide a good wa
 
 This distribution is also adaptive by offering the opportunity to customize your deployment and fit to your needs :
 
-* OS : Ubuntu-18.04-amd64 , Centos 7.X-amd64 and Debian 10
+* OS : Ubuntu-18.04/20.04-amd64 , Centos 7.X-amd64 and Debian 10
 * DNS Service: CoreDNS
 * Ingress Controller Traefik (Default) & HA-Proxy & Nginx
 * Container Runtime: Containerd (Default) & Docker
