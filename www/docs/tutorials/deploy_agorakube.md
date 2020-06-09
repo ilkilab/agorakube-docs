@@ -311,3 +311,19 @@ At the end of installation, you must see the following screen:
 
 
 > *Note: If some errors occures, juste run again the agorakube installation. Agorakube installation process is idempotent.*
+
+# Play with kubernetes
+
+Oncee Agorakube has been succefully installed you can use your kubernetes cluster to deploy and manage your apps.
+
+By default, "kubectl" is configured **only for root user on deploy machine**
+
+## Connect to kubernetes
+
+1) Connect to your Deploy machine and then become root with the following command ```sudo su```
+
+2) Now, list all your nodes with the following command : ```kubectl get nodes -o wide```
+
+3) List all your pods with following command : ```kubectl get pods -o wide```
+
+4) List all your K8S control plan services with : ```kubectl get cs```
