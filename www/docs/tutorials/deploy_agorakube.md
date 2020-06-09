@@ -26,45 +26,45 @@ Below you have the Vagrantfile used for this tutorial. We are using 4 machines U
 #	Vagrantfile
 #
 
-$vagrant_box = "bento/ubuntu-18.04"
-
 Vagrant.configure("2") do |config|
-  config.vm.define "master" do |master|
-      master.vm.box = $vagrant_box
-      master.vm.network :private_network, ip: "10.0.0.11"
-      master.vm.hostname = "master"
-      master.vm.provider "virtualbox" do |vb|
-          vb.customize ["modifyvm", :id, "--memory", 2048]
-          vb.customize ["modifyvm", :id, "--name", "master"] 
-      end
-  end
-  config.vm.define "worker" do |worker|
-      worker.vm.box = $vagrant_box
-      worker.vm.network :private_network, ip: "10.0.0.12"
-      worker.vm.hostname = "worker"
-      worker.vm.provider "virtualbox" do |vb|
-          vb.customize ["modifyvm", :id, "--memory", 2048]
-          vb.customize ["modifyvm", :id, "--name", "worker"] 
-      end
-  end
-  config.vm.define "etcd" do |etcd|
-    etcd.vm.box = $vagrant_box
-    etcd.vm.network :private_network, ip: "10.0.0.13"
-    etcd.vm.hostname = "etcd"
-    etcd.vm.provider "virtualbox" do |vb|
-        vb.customize ["modifyvm", :id, "--memory", 2048]
-        vb.customize ["modifyvm", :id, "--name", "etcd"] 
-    end
-end
-  config.vm.define "deploy" do |deploy|
-      deploy.vm.box = $vagrant_box
-      deploy.vm.network :private_network, ip: "10.0.0.10"
-      deploy.vm.hostname = "deploy"
-      deploy.vm.provider "virtualbox" do |vb|
-          vb.customize ["modifyvm", :id, "--memory", 1024]
-          vb.customize ["modifyvm", :id, "--name", "deploy"] 
-      end
-  end
+    config.vm.box = "bento/ubuntu-18.04"
+	
+	config.vm.define "deploy" do |deploy|
+		deploy.vm.hostname = "deploy"
+		deploy.vm.network "private_network", ip: "10.0.0.10"
+		deploy.vm.provider "virtualbox" do |v|
+			v.memory = 2048
+			v.cpus = 1
+			v.name = "deploy"
+		end
+	end
+	config.vm.define "master" do |master|
+		master.vm.hostname = "master"
+		master.vm.network "private_network", ip: "10.0.0.11"
+		master.vm.provider "virtualbox" do |v|
+			v.memory = 2048
+			v.cpus = 1
+			v.name = "master"
+		end
+	end
+	config.vm.define "worker" do |worker|
+		worker.vm.hostname = "worker"
+		worker.vm.network "private_network", ip: "10.0.0.12"
+		worker.vm.provider "virtualbox" do |v|
+			v.memory = 2048
+			v.cpus = 1
+			v.name = "worker"
+		end
+	end
+	config.vm.define "etcd" do |etcd|
+		etcd.vm.hostname = "etcd"
+		etcd.vm.network "private_network", ip: "10.0.0.13"
+		etcd.vm.provider "virtualbox" do |v|
+			v.memory = 2048
+			v.cpus = 1
+			v.name = "etcd"
+		end
+	end
 end
 ```
 
