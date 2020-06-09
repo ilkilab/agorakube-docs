@@ -47,22 +47,22 @@ Vagrant.configure("2") do |config|
 			v.name = "master"
 		end
 	end
-	config.vm.define "worker" do |worker|
-		worker.vm.hostname = "worker"
-		worker.vm.network "private_network", ip: "10.0.0.12"
-		worker.vm.provider "virtualbox" do |v|
+	config.vm.define "worker1" do |worker1|
+		worker1.vm.hostname = "worker"
+		worker1.vm.network "private_network", ip: "10.0.0.12"
+		worker1.vm.provider "virtualbox" do |v|
 			v.memory = 2048
 			v.cpus = 1
-			v.name = "worker"
+			v.name = "worker1"
 		end
 	end
-	config.vm.define "etcd" do |etcd|
-		etcd.vm.hostname = "etcd"
-		etcd.vm.network "private_network", ip: "10.0.0.13"
-		etcd.vm.provider "virtualbox" do |v|
+	config.vm.define "worker2" do |worker2|
+		worker2.vm.hostname = "etcd"
+		worker2.vm.network "private_network", ip: "10.0.0.13"
+		worker2.vm.provider "virtualbox" do |v|
 			v.memory = 2048
 			v.cpus = 1
-			v.name = "etcd"
+			v.name = "worker2"
 		end
 	end
 end
@@ -130,7 +130,7 @@ Once you have created your pair of keys, do not forget to set the public key (he
 ## Modify the hosts file
 
 
-Now, you need to modify the hosts file of Agorakube.
+Now, you need to modify the **./hosts** file of Agorakube.
 This file is composed of 6 parts:
 - **deploy** will provide the name of the deploy machine
 - **master** will provide a list of master machines to deploy (from 1 to many - best numbers are [1,3,5]) 
@@ -150,15 +150,15 @@ deploy ansible_connection=local
 master  ansible_host=10.0.0.11
 
 [etcd]
-etcd  ansible_host=10.0.0.13
+master  ansible_host=10.0.0.11
 
 [workers]
-master  ansible_host=10.0.0.11
-worker  ansible_host=10.0.0.12
+worker1  ansible_host=10.0.0.12
+worker2  ansible_host=10.0.0.13
 
 [storage]
-master  ansible_host=10.0.0.11
-worker  ansible_host=10.0.0.12
+worker1  ansible_host=10.0.0.12
+worker2  ansible_host=10.0.0.13
 
 [all:vars]
 advertise_ip_masters=10.0.0.11
@@ -170,7 +170,7 @@ ansible_ssh_private_key_file=/home/vagrant/.ssh/id_rsa
 
 # Configure Agorakube Settings
 
-Agorakube is fully customizable. To customize it, modify *./group_vars/all.yaml** file.
+Agorakube is fully customizable. To customize it, modify **./group_vars/all.yaml** file.
 
 You have all information about this file in the [documentation](../main/parameters.md).
 
