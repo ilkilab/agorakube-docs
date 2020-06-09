@@ -327,3 +327,5 @@ By default, "kubectl" is configured **only for root user on deploy machine**
 3) List all your pods with following command : ```kubectl get pods --all-namespaces -o wide```
 
 4) List all your K8S control plan services with : ```kubectl get cs```
+
+Note: The best way to manage Kubernetes cluster is not from the deploy machine itself, but from a client machine (For exemple your computer/laptop). You should [install kubectl on your computer](https://kubernetes.io/docs/tasks/tools/install-kubectl/) and download the kubeconfig file located in "deploy" machine at "/root/.kube/config".
