@@ -111,20 +111,25 @@ This command will update the machine and install the latest version of Python an
 
 # Create a pair of SSH keys
 
-Agorakube is using Ansible to deploy Kubernetes. Ansible needs an SSH connection to configure the other machines. For that you need to create SSH keys. Private key will stay on Deploy machine and public key will be deployed on all machines.
+Agorakube is using Ansible to deploy Kubernetes. Ansible needs an SSH connection to configure the other machines. For that you need to create SSH keys pair. Private key will stay on Deploy machine and public key will be deployed on all machines.
 
-1) On your deploy machine use this command:
+In this part you will create and configure your ssh key pair.
+
+1) Connect to your deploy machine and use the following command to create a SSH key pair.
 
 ```
 ssh-keygen
 ```
 
-It will create a Pair of keys that you will use for you SSH connection
+It will create a Pair of keys that you will use for you SSH connection. **Do not set SSH passphrase !**
 
 
 I suggest letting everything by default for this tutorial, so you will be able to copy and paste most of the code provided in this tutorial.
 
-Once you have created your pair of keys, do not forget to set the public key (here id_rsa.pub) in the other machine in /home/youruser/.ssh/authorized_keys or use ssh-copy-id (the password for vagrant user is vagrant)
+By default ssh key pair is generated under "/home/YOUR_USER/.ssh/ . Private key is "id_rsa" and public key is "id_rsa.pub".
+
+Once you have created your SSH key pair, do not forget to push the public key (here id_rsa.pub) in the remote machines in /home/YOUR_USER/.ssh/authorized_keys file. You can use the following command from "deploy" machine to push your  SSH public key to other machines:
+```ssh-copy-id vagrant@IP``` (Replace IP with the IP of the remote Host). This command will copy the SSH public key located in ~/.ssh/id_rsa.pub to the file /home/vagrant/.ssh/authorized_keys located on the remote host.
 
 ## Modify the hosts file
 
