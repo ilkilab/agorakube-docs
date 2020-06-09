@@ -138,7 +138,7 @@ This file is composed of 6 parts:
 - **worker** will provide a list of worker machines to deploy (from 1 to many ) 
 - **storage** will provide a list of storage machine to deploy (from 1 to many - best numbers are [1,3,5])
 
-The last block **[all:vars]** is used to declare one IP that is used to publish K8S control plan. (In a production environment this IP is a LoadBalancer that announce K8S masters - port 6443). Other parametres in **[all:vars]** are used to specify to Agorakube/Ansible how to connect to cluster machines.
+The last block **[all:vars]** is used to declare one IP that is used to publish K8S control plan. (In a production environment this IP is a LoadBalancer that announce K8S masters - port 6443). Other parametres in **[all:vars]** are used to specify how Agorakube/Ansible can connect to cluster machines.
 
 Below the original file from the project. You have to modify it with your own specification.
 
