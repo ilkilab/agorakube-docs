@@ -129,8 +129,16 @@ Once you have created your pair of keys, do not forget to set the public key (he
 
 ## Modify the hosts file
 
-Now, you need to modify the hosts file of Agorakube. This file is composed of 6 parts. The first one is the group deploy. In this group, you will declare your deploy machine.
-The second is for declaring the master machines, the third is for etcd, the fourth is for worker, the fifth is for declaring storage machines and the last is used to declare one IP that is used to publish K8S control plan. (In a production environment this IP is a LoadBalancer that announce K8S masters - port 6443)
+
+Now, you need to modify the hosts file of Agorakube.
+This file is composed of 6 parts:
+- **deploy** will provide the name of the deploy machine
+- **master** will provide a list of master machines to deploy (from 1 to many - best numbers are [1,3,5]) 
+- **etcd** will provide a list of etcd machines to deploy (from 1 to many - best numbers are [1,3,5]) 
+- **worker** will provide a list of worker machines to deploy (from 1 to many ) 
+- **storage** will provide a list of storage machine to deploy (from 1 to many - best numbers are [1,3,5])
+
+The last block **[all:vars]** is used to declare one IP that is used to publish K8S control plan. (In a production environment this IP is a LoadBalancer that announce K8S masters - port 6443). Other parametres in **[all:vars]** are used to specify to Agorakube/Ansible how to connect to cluster machines.
 
 Below the original file from the project. You have to modify it with your own specification.
 
