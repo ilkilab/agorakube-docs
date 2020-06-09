@@ -47,7 +47,7 @@ Vagrant.configure("2") do |config|
 		end
 	end
 	config.vm.define "worker1" do |worker1|
-		worker1.vm.hostname = "worker"
+		worker1.vm.hostname = "worker1"
 		worker1.vm.network "private_network", ip: "10.0.0.12"
 		worker1.vm.provider "virtualbox" do |v|
 			v.memory = 2048
@@ -56,7 +56,7 @@ Vagrant.configure("2") do |config|
 		end
 	end
 	config.vm.define "worker2" do |worker2|
-		worker2.vm.hostname = "etcd"
+		worker2.vm.hostname = "worker2"
 		worker2.vm.network "private_network", ip: "10.0.0.13"
 		worker2.vm.provider "virtualbox" do |v|
 			v.memory = 2048
@@ -79,8 +79,8 @@ If you want to use the same method of deployment as this tutorial follow those s
 * Deploy the cluster with the Vagrantfile provided below
 	* To deploy with the Vagrantfile, create a file Vagrantfile (with no extension!) with the script below
 	* Open a command line in the path of this file
-	* Use the command ```vagrant up``` (it will start the installation of your machine)
-* You can connect to your VM using ```vagrant ssh NameOfTheMachine```
+	* Use the command ```vagrant up``` (it will start the installation of your machines)
+* You can connect to your VMs using ```vagrant ssh NameOfTheMachine```
 	* If you want to stop your cluster use the command ```vagrant halt -f```
 	* If you want to delete a specific machine ```vagrant delete -f NameOfTheMachine```
 	* If you want to delete your cluster ```vagrant delete -f ```
