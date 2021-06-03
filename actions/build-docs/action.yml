@@ -1,5 +1,0 @@
-name: 'Build documentation for agorakube'
-description: 'This action is used to build documentation of Agorakube website'
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
