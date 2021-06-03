@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://github.com/ilkilab/agorakube/main/instructions/">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Instructions - Welcome to AgoraKube Docs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Instructions";
+    var mkdocs_page_input_path = "main/instructions.md";
+    var mkdocs_page_url = "/ilkilab/agorakube/main/instructions/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-53430005-2', 'agorakube.ilkilabs.io');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Welcome to AgoraKube Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Agorakube</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">User Guide</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../main/">Quickstart</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Instructions</a>
+    <ul class="current">
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../configurations/">Configuration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../parameters/">Parameters</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../etcd_management/">Manage ETCD</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Tutorials</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../tutorials/deploy_agorakube/">Deploy Agorakube VirtualBox</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">About</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/contributing/">Contributing</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/license/">License</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Welcome to AgoraKube Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>User Guide &raquo;</li>
+        
+      
+    
+    <li>Instructions</li>
+    <li class="wy-breadcrumbs-aside">
+  <a href="https://github.com/ilkilab/agorakube" class="icon icon-github">Agorakube</a>
+      
+        <a href="https://github.com/ilkilab/agorakube-docs/tree/master/www/docs/main/instructions.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h1>
+<p>This is a list of points that will be explained in this instructions file for the AgoraKube project :</p>
+<ul>
+<li><a href="#high-level-architecture">High-level Architecture</a></li>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#nodes-setup">Nodes Setup</a></li>
+<li><a href="#k8s-cluster-configuration">K8S Cluster Configuration</a></li>
+<li><a href="#agorakube-parameters">Agorakube Parameters</a></li>
+<li><a href="#kubernetes-deployment">Kubernetes deployment</a></li>
+</ul>
+<h1 id="high-level-architecture">High-level Architecture<a class="headerlink" href="#high-level-architecture" title="Permanent link">&para;</a></h1>
+<p>Below a diagram of the high-level architecture deployed by AgoraKube :
+<img alt="Architecture" src="../../images/AgoraKube_diagram.png" /></p>
+<p><strong>Notes :</strong> This distibution is aimed to be customizable so you can choose :</p>
+<ul>
+<li>Where the <strong>etcd</strong> will be deployed (with the master or not) </li>
+<li>The number of <strong>master</strong> nodes to deploy (from 1 to many)</li>
+<li>The number of <strong>etcd</strong> nodes to deploy (from 1 to many)</li>
+<li>The number of <strong>worker</strong> nodes to deploy (from 1 to many)</li>
+<li>The number of <strong>storage</strong> nodes to deploy (from 1 to many)</li>
+</ul>
+<h1 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h1>
+<p>This section explains what are the prerequisites to install AgoraKube in your environment.</p>
+<h2 id="os">OS<a class="headerlink" href="#os" title="Permanent link">&para;</a></h2>
+<p>Below the OS currently supported on all the machines :</p>
+<ul>
+<li>Ubuntu 18.04 &amp; 20.04 - amd64</li>
+<li>Centos 7 &amp; 8 - amd64</li>
+<li>Debian 10</li>
+</ul>
+<h2 id="node-sizing">Node Sizing<a class="headerlink" href="#node-sizing" title="Permanent link">&para;</a></h2>
+<p>Below the sizing prerequisites for all the nodes (master and worker) :</p>
+<ul>
+<li>2 GB or more of RAM per machine</li>
+<li>2 CPUs or more</li>
+<li>Full network connectivity between all machines in the cluster (public or private network is fine)</li>
+<li>Full internet access</li>
+<li>Unique hostname, MAC address, and product_uuid for every node. See here for more <a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#verify-the-mac-address-and-product-uuid-are-unique-for-every-node">details</a>.</li>
+<li>Certain ports are open on your machines. See here for more <a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#check-required-ports">details</a>.</li>
+<li>Swap disabled. You MUST disable swap in order for the kubelet to work properly.</li>
+</ul>
+<p>Below the sizing prerequisites for the deployment machine :</p>
+<ul>
+<li>2 GB or more of RAM</li>
+<li>1 CPU or more</li>
+<li>Full network connectivity between all machines in the cluster (public or private network is fine)</li>
+<li>Full internet access</li>
+</ul>
+<h1 id="nodes-setup">Nodes Setup<a class="headerlink" href="#nodes-setup" title="Permanent link">&para;</a></h1>
+<p>This section explains how to setup notes before deploying Kubernetes Clusters with AgoraKube.</p>
+<h2 id="deployment-node">Deployment node<a class="headerlink" href="#deployment-node" title="Permanent link">&para;</a></h2>
+<p>The deployment node is an Ansible server which contains all Ansible roles and variables used to deploy and configure Kubernetes Clusters with AgoraKube distribution.</p>
+<ul>
+<li>Connect to the deployment node and run the following command :</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>bash &lt;(curl -s https://raw.githubusercontent.com/ilkilab/agorakube/master/setup-deploy.sh)
+</code></pre></div>
+
+<h2 id="k8s-nodes">K8S nodes<a class="headerlink" href="#k8s-nodes" title="Permanent link">&para;</a></h2>
+<p>The K8S nodes will host all the components needed for a Kubernetes cluster Control and Data planes.</p>
+<p>The prerequisites are:</p>
+<ul>
+<li>SSH Server (like Openssh)</li>
+<li>Python2</li>
+</ul>
+<p>You can run the following command to automatically install those packages :</p>
+<div class="codehilite"><pre><span></span><code>bash &lt;(curl -s https://raw.githubusercontent.com/ilkilab/agorakube/master/setup-hosts.sh)
+</code></pre></div>
+
+<h2 id="ssh-keys-creation">SSH keys creation<a class="headerlink" href="#ssh-keys-creation" title="Permanent link">&para;</a></h2>
+<p>Agorakube is using Ansible to deploy Kubernetes. You have to configure SSH keys to ensure the communication between the deploy machine and the others.</p>
+<p>On the deploy machine, create the SSH keys :</p>
+<div class="codehilite"><pre><span></span><code>ssh-keygen
+</code></pre></div>
+
+<p>You can let everything by default.</p>
+<p>When your keys are created, you have to copy the public key in the other machine in the folder /home/yourUser/.ssh/authorized_keys, or you can use the following commands to copy the key :</p>
+<div class="codehilite"><pre><span></span><code>ssh-copy-id -i .ssh/id_rsa.pub yourUser@IP_OF_THE_HOST
+</code></pre></div>
+
+<p>You have to execute this command for each node of your cluster</p>
+<p>Once your ssh keys have been pushed to all nodes, modify the file "agorakube/hosts" to add the user/ssh-key (in section <strong>SSH Connection settings</strong>) that Agorakube will use to connect to all nodes</p>
+<h1 id="k8s-cluster-configuration">K8S Cluster Configuration<a class="headerlink" href="#k8s-cluster-configuration" title="Permanent link">&para;</a></h1>
+<p>AgoraKube enables an easy way to deploy and manage customizable K8S clusters.</p>
+<h2 id="inventory-file">Inventory file<a class="headerlink" href="#inventory-file" title="Permanent link">&para;</a></h2>
+<p>The first file to modify is <strong>"./hosts"</strong>. This file contains all architecture information about your K8S Cluster.</p>
+<p><strong>All K8S servers names must be filled in by their FQDN.</strong></p>
+<p>The next Sample deploys K8S components in HA mode on 6 nodes (3 <strong>etcd/masters</strong> nodes and 3 <strong>workers</strong> nodes) :</p>
+<div class="codehilite"><pre><span></span><code>[deploy]
+master1 ansible_connection=local
+
+[masters]
+master1  ansible_host=10.10.20.3
+master2  ansible_host=10.10.20.13
+master3  ansible_host=10.10.20.23
+
+[etcd]
+master1  ansible_host=10.10.20.3
+master2  ansible_host=10.10.20.13
+master3  ansible_host=10.10.20.23
+
+[workers]
+worker1  ansible_host=10.10.20.4
+worker2  ansible_host=10.10.20.5
+worker3  ansible_host=10.10.20.6
+
+
+[storage]
+worker1 ansible_host=10.10.20.4
+worker2 ansible_host=10.10.20.5
+worker3 ansible_host=10.10.20.6
+
+[all:vars]
+advertise_ip_masters=10.10.20.3
+
+# SSH connection settings
+ansible_ssh_extra_args=&#39;-o StrictHostKeyChecking=no&#39;
+ansible_user=vagrant
+ansible_ssh_private_key_file=/home/vagrant/ssh-private-key.pem
+</code></pre></div>
+
+<p>The <strong>deploy</strong> section contains information about how to connect to the deployment machine.</p>
+<p>The <strong>etcd</strong> section contains information about the etcd machine(s) instances.</p>
+<p>The <strong>masters</strong> section contains information about the masters nodes (K8S Control Plane).</p>
+<p>The <strong>workers</strong> section contains information about the workers nodes (K8S Data Plane).</p>
+<p>The <strong>storage</strong> section contains information about the storage nodes (K8S Storage Plane).</p>
+<p>The <strong>all:vars</strong> section contains information about how to connect to K8S nodes.</p>
+<p>The <strong>SSH Connection settings</strong> section contain information about the SSH connexion. You have to modify the variable <strong>ansible_ssh_private_key_file</strong> with the path where your public key is stored.
+<strong>ansible_user</strong> User used as service account by Agorakube to connect to all nodes. <strong>User must be sudoer</strong>.</p>
+<h2 id="configuration-file">Configuration file<a class="headerlink" href="#configuration-file" title="Permanent link">&para;</a></h2>
+<p>The <strong>"./group_vars/all.yaml"</strong> file contains all configuration variables that you can customize to make your K8S Cluster fit your needs.</p>
+<p>Sample file will deploy <strong>containerd</strong> as container runtime, <strong>kube-router</strong> as CNI plugin and <strong>coredns</strong> as DNS service : </p>
+<div class="codehilite"><pre><span></span><code>---
+
+# CERTIFICATES
+cn_root_ca: ilkilabs
+c: FR
+st: Ile-De-France
+l: Paris
+expiry: 87600h
+rotate_certs_pki: false
+rotate_full_pki: false
+
+# Components version
+etcd_release: v3.4.7
+kubernetes_release: v1.18.2
+delete_previous_k8s_install: False
+delete_etcd_install: False
+check_etcd_install: True
+
+# IPs-CIDR Configurations
+cluster_cidr: 10.33.0.0/16
+service_cluster_ip_range: 10.32.0.0/24
+kubernetes_service: 10.32.0.1
+cluster_dns_ip: 10.32.0.10
+service_node_port_range: 30000-32000
+kube_proxy_mode: ipvs
+kube_proxy_ipvs_algotithm: rr
+cni_release: 0.8.5
+
+# Custom features
+runtime: containerd
+network_cni_plugin: kube-router
+flannel_iface: default
+ingress_controller: nginx
+dns_server_soft: coredns
+populate_etc_hosts: yes
+k8s_dashboard: True
+service_mesh: none
+linkerd_release: stable-2.6.0
+install_helm: False
+init_helm: False
+install_kubeapps: False
+
+# Calico
+calico_mtu: 1440
+
+# Security
+encrypt_etcd_keys:
+# Warrning: If multiple keys are defined ONLY LAST KEY is used for encrypt and decrypt.
+# Other keys are used only for decrypt purpose
+  key1:
+    secret: 1fJcKt6vBxMt+AkBanoaxFF2O6ytHIkETNgQWv4b/+Q=
+
+# Data Directory
+data_path: &quot;/var/agorakube&quot;
+etcd_data_directory: &quot;/var/lib/etcd&quot;
+#restoration_snapshot_file: /path/snopshot/file Located on {{ etcd_data_directory }}
+
+# KUBE-APISERVER spec
+kube_apiserver_enable_admission_plugins:
+# plugin AlwaysPullImage can be deleted. Credentials would be required to pull the private images every time. 
+# Also, in trusted environments, this might increases load on network, registry, and decreases speed.
+#  - AlwaysPullImages
+  - NamespaceLifecycle
+# EventRateLimit is used to limit DoS on API server in case of event Flooding
+  - EventRateLimit
+  - LimitRanger
+  - ServiceAccount
+  - TaintNodesByCondition
+  - PodNodeSelector
+  - Priority
+  - DefaultTolerationSeconds
+  - DefaultStorageClass
+  - StorageObjectInUseProtection
+  - PersistentVolumeClaimResize
+  - MutatingAdmissionWebhook
+  - NodeRestriction
+  - ValidatingAdmissionWebhook
+  - RuntimeClass
+  - ResourceQuota
+# SecurityContextDeny should be replaced by PodSecurityPolicy
+#  - SecurityContextDeny
+
+
+# Rook Settings
+enable_rook: True
+rook_dataDirHostPath: /data/rook
+
+# Minio Settings
+# Rook MUST be enabed.
+enable_rook_minio: True
+rook_minio_infra_access_key: admin
+rook_minio_infra_secret_key: password
+
+# Monitoring. Rook MUST be enabled to use monitoring (Monitoring use StorageClass to persist data)
+enable_monitoring: False
+
+
+# Enable Harbor Registry - Contain Chartmuseum, notary, clair, registry.
+# Harbor will be expose by HTTPS with Ingress Resource.
+# Rook MUST be enabled to use Harbor (Harbor use StorageClass to persist data)
+install_harbor: False
+harbor_ingress_host: harbor.ilkilabs.io
+notary_ingress_host: notary.ilkilabs.io
+harbor_admin_password: ChangeMe!
+</code></pre></div>
+
+<p><strong>Note :</strong> You can also modify the IPs-CIDR if you want.</p>
+<h1 id="kubernetes-deployment">Kubernetes deployment<a class="headerlink" href="#kubernetes-deployment" title="Permanent link">&para;</a></h1>
+<p>Once all configuration files are set, run the following command to launch the Ansible playbook that will deploy the pre-configured Kubernetes cluster :</p>
+<div class="codehilite"><pre><span></span><code>sudo ansible-playbook agorakube.yaml
+</code></pre></div>
+              
+            </div>
+          </div>
+
+<footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../configurations/" class="btn btn-neutral float-right" title="Configuration">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../main/" class="btn btn-neutral" title="Quickstart"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright  &#169; 2020  <a href="https://www.ilki.fr/">ILKI - ILKILABS</a></p>
+    
+    
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/ilkilab/agorakube" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/ClouDesigner" target="_blank" rel="noopener" title="twitter" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.linkedin.com/company/ilki" target="_blank" rel="noopener" title="linkedin" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+  </div>
+
+</footer>
+
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+          <a href="https://github.com/ilkilab/agorakube" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+
+      
+        <span><a href="../main/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../configurations/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

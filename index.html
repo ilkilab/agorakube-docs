@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="This site provide a full documentation of Agorakube Kubernetes Distribution.">
+  
+  <link rel="canonical" href="https://github.com/ilkilab/agorakube/">
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Welcome to AgoraKube Docs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Agorakube";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = "/ilkilab/agorakube/";
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-53430005-2', 'agorakube.ilkilabs.io');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> Welcome to AgoraKube Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href=".">Agorakube</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">User Guide</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="main/main/">Quickstart</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="main/instructions/">Instructions</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="main/configurations/">Configuration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="main/parameters/">Parameters</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="main/etcd_management/">Manage ETCD</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Tutorials</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="tutorials/deploy_agorakube/">Deploy Agorakube VirtualBox</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">About</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="about/contributing/">Contributing</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="about/license/">License</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">Welcome to AgoraKube Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Agorakube</li>
+    <li class="wy-breadcrumbs-aside">
+  <a href="https://github.com/ilkilab/agorakube" class="icon icon-github">Agorakube</a>
+      
+        <a href="https://github.com/ilkilab/agorakube-docs/tree/master/www/docs/index.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p align="center"> <img src="./images/logo_agorakube.png" width="400" alt="Agorakube" title="Agorakube" />
+</p>
+<p>
+<img src="https://raw.githubusercontent.com/cncf/artwork/master/projects/kubernetes/certified-kubernetes/versionless/color/certified-kubernetes-color.svg?sanitize=true" 
+width="100" alt="k8s-conformance-v1.16" title="https://github.com/cncf/k8s-conformance/tree/master/v1.16/agorakube"/> <img 
+src="https://raw.githubusercontent.com/cncf/artwork/master/other/cncf-landscape/stacked/color/cncf-landscape-stacked-color.svg?sanitize=true" width="100" 
+alt="Agorakube is a cncf landscap project" title="Agorakube is a cncf landscap project"/> </p>
+
+<p>Agorakube is an Opensource Kubernetes Distribution wich is aimed to provide the simplest way to install kubernetes on bare-metal, virtual &amp; Cloud environments. </p>
+<p>Since November 2019, Agorakube has been certified by the "Kubernetes Conformance Program" and is a project of <a href="https://landscape.cncf.io/selected=agora-kube">the cncf landscape</a>.</p>
+<p>Agorakube install Hyper Customizable Kubernetes Clusters using native K8S binaries.</p>
+<p>Based on <strong>Infrastructure As Code</strong> (IaC) Ansible playbooks and roles, Agorakube is very easy to understand, especially for SysOps guys.</p>
+<p>Currently, Ubuntu 18.04, 20.04 amd64, Centos 7 and Debian 10 are supported, but several other operating systems will be available soon.</p>
+<p>Feel free to contribute.</p>
+              
+            </div>
+          </div>
+
+<footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="main/main/" class="btn btn-neutral float-right" title="Quickstart">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright  &#169; 2020  <a href="https://www.ilki.fr/">ILKI - ILKILABS</a></p>
+    
+    
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/ilkilab/agorakube" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/ClouDesigner" target="_blank" rel="noopener" title="twitter" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.linkedin.com/company/ilki" target="_blank" rel="noopener" title="linkedin" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+  </div>
+
+</footer>
+
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+          <a href="https://github.com/ilkilab/agorakube" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+
+      
+      
+        <span style="margin-left: 15px"><a href="main/main/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.1.2
+Build Date UTC : 2021-06-03 15:14:16.937467+00:00
+-->

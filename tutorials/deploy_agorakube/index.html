@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://github.com/ilkilab/agorakube/tutorials/deploy_agorakube/">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Deploy Agorakube VirtualBox - Welcome to AgoraKube Docs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Deploy Agorakube VirtualBox";
+    var mkdocs_page_input_path = "tutorials/deploy_agorakube.md";
+    var mkdocs_page_url = "/ilkilab/agorakube/tutorials/deploy_agorakube/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-53430005-2', 'agorakube.ilkilabs.io');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Welcome to AgoraKube Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Agorakube</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">User Guide</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../main/main/">Quickstart</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../main/instructions/">Instructions</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../main/configurations/">Configuration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../main/parameters/">Parameters</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../main/etcd_management/">Manage ETCD</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Tutorials</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Deploy Agorakube VirtualBox</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#installation-of-vms-used-in-this-tutorial">Installation of VMs used in this tutorial</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">About</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/contributing/">Contributing</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/license/">License</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Welcome to AgoraKube Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Tutorials &raquo;</li>
+        
+      
+    
+    <li>Deploy Agorakube VirtualBox</li>
+    <li class="wy-breadcrumbs-aside">
+  <a href="https://github.com/ilkilab/agorakube" class="icon icon-github">Agorakube</a>
+      
+        <a href="https://github.com/ilkilab/agorakube-docs/tree/master/www/docs/tutorials/deploy_agorakube.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>In this tutorial, we will use virtual machines that will be created by vagrant using VirtualBox.</p>
+<p><a href="https://www.vagrantup.com/">Vagrant</a> is an orchestration tool for building and managing virtual machine environments in a single workflow.</p>
+<p><a href="https://www.virtualbox.org/">VirtualBox</a> is an Hypervisor Type 2 and it is used to provision Virtual Machines localy.</p>
+<h1 id="deploy-the-environment">Deploy the environment<a class="headerlink" href="#deploy-the-environment" title="Permanent link">&para;</a></h1>
+<p>If you want to deploy the same Kubernetes cluster as this tutorial you will need at least a host with 12GB of RAM, but you can adapt it.</p>
+<p>The cluster will be composed of 4 Virtual machines.</p>
+<ul>
+<li>1 machine Deploy that will be used as a deployment machine. This machine is used to manage your K8S cluster.</li>
+<li>1 machine master/etcd</li>
+<li>2 machine worker/storage that are used as worker</li>
+</ul>
+<blockquote>
+<p><em>"Note: If you don't have enough RAM for this tutorial, we suggest deploying an all-in-one cluster (1 machine with all roles). A Vagrantfile is provided for this in the project Agorakube in </em><em>./test_lab</em>*</p>
+</blockquote>
+<p>Below you have the Vagrantfile used for this tutorial. We are using 4 machines Ubuntu 18.04. You are free to change the OS to CentOS 7 if you want.</p>
+<ul>
+<li>Create a file named "Vagrantfile" with the following content:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="c1">#</span>
+<span class="c1">#   Vagrantfile</span>
+<span class="c1">#</span>
+
+<span class="no">Vagrant</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">box</span> <span class="o">=</span> <span class="s2">&quot;bento/ubuntu-18.04&quot;</span>
+
+    <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">define</span> <span class="s2">&quot;deploy&quot;</span> <span class="k">do</span> <span class="o">|</span><span class="n">deploy</span><span class="o">|</span>
+        <span class="n">deploy</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">hostname</span> <span class="o">=</span> <span class="s2">&quot;deploy&quot;</span>
+        <span class="n">deploy</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">network</span> <span class="s2">&quot;private_network&quot;</span><span class="p">,</span> <span class="ss">ip</span><span class="p">:</span> <span class="s2">&quot;10.0.0.10&quot;</span>
+        <span class="n">deploy</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">provider</span> <span class="s2">&quot;virtualbox&quot;</span> <span class="k">do</span> <span class="o">|</span><span class="n">v</span><span class="o">|</span>
+            <span class="n">v</span><span class="o">.</span><span class="n">memory</span> <span class="o">=</span> <span class="mi">2048</span>
+            <span class="n">v</span><span class="o">.</span><span class="n">cpus</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="n">v</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;deploy&quot;</span>
+        <span class="k">end</span>
+    <span class="k">end</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">define</span> <span class="s2">&quot;master&quot;</span> <span class="k">do</span> <span class="o">|</span><span class="n">master</span><span class="o">|</span>
+        <span class="n">master</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">hostname</span> <span class="o">=</span> <span class="s2">&quot;master&quot;</span>
+        <span class="n">master</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">network</span> <span class="s2">&quot;private_network&quot;</span><span class="p">,</span> <span class="ss">ip</span><span class="p">:</span> <span class="s2">&quot;10.0.0.11&quot;</span>
+        <span class="n">master</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">provider</span> <span class="s2">&quot;virtualbox&quot;</span> <span class="k">do</span> <span class="o">|</span><span class="n">v</span><span class="o">|</span>
+            <span class="n">v</span><span class="o">.</span><span class="n">memory</span> <span class="o">=</span> <span class="mi">2048</span>
+            <span class="n">v</span><span class="o">.</span><span class="n">cpus</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="n">v</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;master&quot;</span>
+        <span class="k">end</span>
+    <span class="k">end</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">define</span> <span class="s2">&quot;worker1&quot;</span> <span class="k">do</span> <span class="o">|</span><span class="n">worker1</span><span class="o">|</span>
+        <span class="n">worker1</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">hostname</span> <span class="o">=</span> <span class="s2">&quot;worker1&quot;</span>
+        <span class="n">worker1</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">network</span> <span class="s2">&quot;private_network&quot;</span><span class="p">,</span> <span class="ss">ip</span><span class="p">:</span> <span class="s2">&quot;10.0.0.12&quot;</span>
+        <span class="n">worker1</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">provider</span> <span class="s2">&quot;virtualbox&quot;</span> <span class="k">do</span> <span class="o">|</span><span class="n">v</span><span class="o">|</span>
+            <span class="n">v</span><span class="o">.</span><span class="n">memory</span> <span class="o">=</span> <span class="mi">2048</span>
+            <span class="n">v</span><span class="o">.</span><span class="n">cpus</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="n">v</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;worker1&quot;</span>
+        <span class="k">end</span>
+    <span class="k">end</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">define</span> <span class="s2">&quot;worker2&quot;</span> <span class="k">do</span> <span class="o">|</span><span class="n">worker2</span><span class="o">|</span>
+        <span class="n">worker2</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">hostname</span> <span class="o">=</span> <span class="s2">&quot;worker2&quot;</span>
+        <span class="n">worker2</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">network</span> <span class="s2">&quot;private_network&quot;</span><span class="p">,</span> <span class="ss">ip</span><span class="p">:</span> <span class="s2">&quot;10.0.0.13&quot;</span>
+        <span class="n">worker2</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">provider</span> <span class="s2">&quot;virtualbox&quot;</span> <span class="k">do</span> <span class="o">|</span><span class="n">v</span><span class="o">|</span>
+            <span class="n">v</span><span class="o">.</span><span class="n">memory</span> <span class="o">=</span> <span class="mi">2048</span>
+            <span class="n">v</span><span class="o">.</span><span class="n">cpus</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="n">v</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;worker2&quot;</span>
+        <span class="k">end</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+
+<h2 id="installation-of-vms-used-in-this-tutorial">Installation of VMs used in this tutorial<a class="headerlink" href="#installation-of-vms-used-in-this-tutorial" title="Permanent link">&para;</a></h2>
+<p>If you want to use the same method of deployment as this tutorial follow those steps.</p>
+<ul>
+<li>Install <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a><ul>
+<li>This is necessary to use a version of VirtualBox supported by Vagrant otherwise you will not have the possibility to use the Vagrantfile.</li>
+</ul>
+</li>
+<li>Install <a href="https://www.vagrantup.com/downloads.html">Vagrant</a><ul>
+<li>You can install the latest version</li>
+</ul>
+</li>
+<li>Deploy the cluster with the Vagrantfile provided below<ul>
+<li>To deploy with the Vagrantfile, create a file Vagrantfile (with no extension!) with the script below</li>
+<li>Open a command line in the path of this file</li>
+<li>Use the command <code>vagrant up</code> (it will start the installation of your machines)</li>
+</ul>
+</li>
+<li>You can connect to your VMs using <code>vagrant ssh NameOfTheMachine</code><ul>
+<li>If you want to stop your cluster use the command <code>vagrant halt -f</code></li>
+<li>If you want to delete a specific machine <code>vagrant delete -f NameOfTheMachine</code></li>
+<li>If you want to delete your cluster <code>vagrant delete -f</code></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><em>"Note: All machines have to be able to communicate to each other."</em></p>
+</blockquote>
+<p>The deploy machine has to be able to communicate by SSH with the others machines.</p>
+<h1 id="setup-agorakube">Setup Agorakube<a class="headerlink" href="#setup-agorakube" title="Permanent link">&para;</a></h1>
+<p>Now that all your nodes are running, you will be able to setup Agorakube.</p>
+<p>1) Connect to you "deploy" node using <code>vagrant ssh deploy</code> command and then run the following command:</p>
+<p><code>bash &lt;(curl -s https://raw.githubusercontent.com/ilkilab/Agorakube/master/setup-deploy.sh)</code></p>
+<p>This command will install Ansible and clone the Agorakube repository on your current path.</p>
+<p>2) Next, connect to other Virtual Machines and run the following command on all machines.</p>
+<div class="codehilite"><pre><span></span><code>bash &lt;(curl -s https://raw.githubusercontent.com/ilkilab/Agorakube/master/setup-hosts.sh)
+</code></pre></div>
+
+<p>This command will update the machine and install the latest version of Python and Openssh-server (Ansible needs Python and SSH to work).</p>
+<h1 id="create-a-pair-of-ssh-keys">Create a pair of SSH keys<a class="headerlink" href="#create-a-pair-of-ssh-keys" title="Permanent link">&para;</a></h1>
+<p>Agorakube is using Ansible to deploy Kubernetes. Ansible needs an SSH connection to configure the other machines. For that you need to create SSH keys pair. Private key will stay on Deploy machine and public key will be deployed on all machines.</p>
+<p>In this part you will create and configure your ssh key pair.</p>
+<p>1) Connect to your deploy machine and use the following command to create a SSH key pair.</p>
+<div class="codehilite"><pre><span></span><code>ssh-keygen
+</code></pre></div>
+
+<p>It will create a Pair of keys that you will use for you SSH connection. <strong>Do not set SSH passphrase !</strong></p>
+<p>I suggest letting everything by default for this tutorial, so you will be able to copy and paste most of the code provided in this tutorial.</p>
+<p>By default ssh key pair is generated under "/home/YOUR_USER/.ssh/ . Private key is "id_rsa" and public key is "id_rsa.pub".</p>
+<p>Once you have created your SSH key pair, do not forget to push the public key (here id_rsa.pub) in the remote machines in /home/YOUR_USER/.ssh/authorized_keys file. You can use the following command from "deploy" machine to push your  SSH public key to other machines:</p>
+<p><code>ssh-copy-id vagrant@IP</code> (Replace IP with the IP of the remote Host). </p>
+<p>This command will copy the SSH public key located in ~/.ssh/id_rsa.pub to the file /home/vagrant/.ssh/authorized_keys located on the remote host.</p>
+<p><strong>The password for vagrant user is "vagrant".</strong></p>
+<h2 id="modify-the-hosts-file">Modify the hosts file<a class="headerlink" href="#modify-the-hosts-file" title="Permanent link">&para;</a></h2>
+<p>Now, you need to modify the <strong>./hosts</strong> file of Agorakube.
+This file is composed of 6 parts:
+- <strong>deploy</strong> will provide the name of the deploy machine
+- <strong>master</strong> will provide a list of master machines to deploy (from 1 to many - best numbers are [1,3,5]) 
+- <strong>etcd</strong> will provide a list of etcd machines to deploy (from 1 to many - best numbers are [1,3,5]) 
+- <strong>worker</strong> will provide a list of worker machines to deploy (from 1 to many ) 
+- <strong>storage</strong> will provide a list of storage machine to deploy (from 1 to many - best numbers are [1,3,5])</p>
+<p>The last block <strong>[all:vars]</strong> is used to declare one IP that is used to publish K8S control plan. (In a production environment this IP is a LoadBalancer that announce K8S masters - port 6443). Other parametres in <strong>[all:vars]</strong> are used to specify how Agorakube/Ansible can connect to cluster machines.</p>
+<p>Below the file used for this tutorial. You can modify it with your own specifications.</p>
+<div class="codehilite"><pre><span></span><code><span class="k">[deploy]</span>
+<span class="na">deploy ansible_connection</span><span class="o">=</span><span class="s">local</span>
+
+<span class="k">[masters]</span>
+<span class="na">master  ansible_host</span><span class="o">=</span><span class="s">10.0.0.11</span>
+
+<span class="k">[etcd]</span>
+<span class="na">master  ansible_host</span><span class="o">=</span><span class="s">10.0.0.11</span>
+
+<span class="k">[workers]</span>
+<span class="na">worker1  ansible_host</span><span class="o">=</span><span class="s">10.0.0.12</span>
+<span class="na">worker2  ansible_host</span><span class="o">=</span><span class="s">10.0.0.13</span>
+
+<span class="k">[storage]</span>
+<span class="na">worker1  ansible_host</span><span class="o">=</span><span class="s">10.0.0.12</span>
+<span class="na">worker2  ansible_host</span><span class="o">=</span><span class="s">10.0.0.13</span>
+
+<span class="k">[all:vars]</span>
+<span class="na">advertise_ip_masters</span><span class="o">=</span><span class="s">10.0.0.11</span>
+<span class="na">ansible_ssh_extra_args</span><span class="o">=</span><span class="s">&#39;-o StrictHostKeyChecking=no&#39;</span>
+<span class="na">ansible_user</span><span class="o">=</span><span class="s">vagrant</span>
+<span class="na">ansible_ssh_private_key_file</span><span class="o">=</span><span class="s">/home/vagrant/.ssh/id_rsa</span>
+</code></pre></div>
+
+<blockquote>
+<p><em>"Note: When you declare a machine, you have to use the FQDN."</em></p>
+</blockquote>
+<h1 id="configure-agorakube-settings">Configure Agorakube Settings<a class="headerlink" href="#configure-agorakube-settings" title="Permanent link">&para;</a></h1>
+<p>Agorakube is fully customizable. To customize it, modify <strong>./group_vars/all.yaml</strong> file.</p>
+<p>You have all information about this file in the <a href="../../main/parameters/">documentation</a>.</p>
+<p>You have below the file used for this tutorial:</p>
+<div class="codehilite"><pre><span></span><code>---
+
+# CERTIFICATES
+cn_root_ca: ilkilabs
+c: FR
+st: Ile-De-France
+l: Paris
+expiry: 87600h
+rotate_certs_pki: false
+rotate_full_pki: false
+
+# Components version
+etcd_release: v3.4.7
+kubernetes_release: v1.18.3
+delete_previous_k8s_install: False
+delete_etcd_install: False
+check_etcd_install: True
+
+# IPs-CIDR Configurations
+cluster_cidr: 10.33.0.0/16
+service_cluster_ip_range: 10.32.0.0/24
+kubernetes_service: 10.32.0.1
+cluster_dns_ip: 10.32.0.10
+service_node_port_range: 30000-32000
+kube_proxy_mode: ipvs
+kube_proxy_ipvs_algotithm: rr
+cni_release: 0.8.5
+
+# Custom features
+runtime: containerd
+network_cni_plugin: kube-router
+flannel_iface: default
+ingress_controller: traefik
+dns_server_soft: coredns
+populate_etc_hosts: yes
+k8s_dashboard: True
+service_mesh: none
+linkerd_release: stable-2.6.0
+install_helm: False
+init_helm: False
+install_kubeapps: False
+
+# Calico
+calico_mtu: 1440
+
+# Security
+encrypt_etcd_keys:
+# Warrning: If multiple keys are defined ONLY LAST KEY is used for encrypt and decrypt.
+# Other keys are used only for decrypt purpose
+  key1:
+    secret: 1fJcKt6vBxMt+AkBanoaxFF2O6ytHIkETNgQWv4b/+Q=
+
+# Data Directory
+data_path: &quot;/var/agorakube&quot;
+etcd_data_directory: &quot;/var/lib/etcd&quot;
+#restoration_snapshot_file: /path/snopshot/file Located on {{ etcd_data_directory }}
+
+# KUBE-APISERVER spec
+kube_apiserver_enable_admission_plugins:
+# plugin AlwaysPullImage can be deleted. Credentials would be required to pull the private images every time. 
+# Also, in trusted environments, this might increases load on network, registry, and decreases speed.
+#  - AlwaysPullImages
+  - NamespaceLifecycle
+# EventRateLimit is used to limit DoS on API server in case of event Flooding
+  - EventRateLimit
+  - LimitRanger
+  - ServiceAccount
+  - TaintNodesByCondition
+  - PodNodeSelector
+  - Priority
+  - DefaultTolerationSeconds
+  - DefaultStorageClass
+  - StorageObjectInUseProtection
+  - PersistentVolumeClaimResize
+  - MutatingAdmissionWebhook
+  - NodeRestriction
+  - ValidatingAdmissionWebhook
+  - RuntimeClass
+  - ResourceQuota
+# SecurityContextDeny should be replaced by PodSecurityPolicy
+#  - SecurityContextDeny
+
+
+# Rook Settings
+enable_rook: False
+rook_dataDirHostPath: /data/rook
+
+# Minio Settings
+# Minio Key MUST BE Base64 encoded and Rook MUST be enabed.
+enable_rook_minio: False
+rook_minio_infra_access_key: admin_minio
+rook_minio_infra_secret_key: password_minio
+
+
+# Monitoring. Rook MUST be enabled to use monitoring (Monitoring use StorageClass to persist data)
+enable_monitoring: False
+
+
+# Enable Harbor Registry - Contain Chartmuseum, notary, clair, registry.
+# Harbor will be expose by HTTPS with Ingress Resource.
+# Rook MUST be enabled to use Harbor (Harbor use StorageClass to persist data)
+install_harbor: False
+harbor_ingress_host: harbor.ilkilabs.io
+notary_ingress_host: notary.ilkilabs.io
+harbor_admin_password: ChangeMe!
+</code></pre></div>
+
+<h1 id="deploy-k8s-with-agorakube">Deploy K8S with Agorakube<a class="headerlink" href="#deploy-k8s-with-agorakube" title="Permanent link">&para;</a></h1>
+<p>Now that your K8S cluster is defined and configured in ".hosts" and "./groug_vars/all.yaml" files you are ready to run the Agorakube installation.</p>
+<p>Run the followinf command:</p>
+<div class="codehilite"><pre><span></span><code>sudo ansible-playbook agorakube.yaml
+</code></pre></div>
+
+<p>The installation prosses can take a wile to complite, so just wait.</p>
+<p>At the end of installation, you must see the following screen:</p>
+<p align="center"> <img src="../../images/completed_install.png" width="400" alt="Agorakube" title="Agorakube" />
+</p>
+
+<blockquote>
+<p><em>Note: If some errors occures, juste run again the agorakube installation. Agorakube installation process is idempotent.</em></p>
+</blockquote>
+<h1 id="play-with-kubernetes">Play with kubernetes<a class="headerlink" href="#play-with-kubernetes" title="Permanent link">&para;</a></h1>
+<p>Oncee Agorakube has been succefully installed you can use your kubernetes cluster to deploy and manage your apps.</p>
+<p>By default, "kubectl" is configured <strong>only for root user on deploy machine</strong></p>
+<h2 id="connect-to-kubernetes">Connect to kubernetes<a class="headerlink" href="#connect-to-kubernetes" title="Permanent link">&para;</a></h2>
+<p>1) Connect to your Deploy machine and then become root with the following command <code>sudo su</code></p>
+<p>2) Now, list all your nodes with the following command : <code>kubectl get nodes -o wide</code></p>
+<p>3) List all your pods with following command : <code>kubectl get pods --all-namespaces -o wide</code></p>
+<p>4) List all your K8S control plan services with : <code>kubectl get cs</code></p>
+<p>Note: The best way to manage Kubernetes cluster is not from the deploy machine itself, but from a client machine (For exemple your computer/laptop). You should <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">install kubectl on your computer</a> and download the kubeconfig file located in "deploy" machine at "/root/.kube/config".</p>
+              
+            </div>
+          </div>
+
+<footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../about/contributing/" class="btn btn-neutral float-right" title="Contributing">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../main/etcd_management/" class="btn btn-neutral" title="Manage ETCD"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright  &#169; 2020  <a href="https://www.ilki.fr/">ILKI - ILKILABS</a></p>
+    
+    
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/ilkilab/agorakube" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/ClouDesigner" target="_blank" rel="noopener" title="twitter" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.linkedin.com/company/ilki" target="_blank" rel="noopener" title="linkedin" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+  </div>
+
+</footer>
+
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+          <a href="https://github.com/ilkilab/agorakube" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+
+      
+        <span><a href="../../main/etcd_management/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../about/contributing/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

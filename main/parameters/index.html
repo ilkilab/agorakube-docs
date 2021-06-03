@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://github.com/ilkilab/agorakube/main/parameters/">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Parameters - Welcome to AgoraKube Docs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Parameters";
+    var mkdocs_page_input_path = "main/parameters.md";
+    var mkdocs_page_url = "/ilkilab/agorakube/main/parameters/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-53430005-2', 'agorakube.ilkilabs.io');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Welcome to AgoraKube Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Agorakube</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">User Guide</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../main/">Quickstart</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../instructions/">Instructions</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../configurations/">Configuration</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Parameters</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#certificates-section">Certificates section</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ips-cidr-configurations">IPs-CIDR Configurations</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#custom-features-section">Custom features section</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#other-parameters-sections">Other parameters sections</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../etcd_management/">Manage ETCD</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Tutorials</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../tutorials/deploy_agorakube/">Deploy Agorakube VirtualBox</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">About</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/contributing/">Contributing</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/license/">License</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Welcome to AgoraKube Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>User Guide &raquo;</li>
+        
+      
+    
+    <li>Parameters</li>
+    <li class="wy-breadcrumbs-aside">
+  <a href="https://github.com/ilkilab/agorakube" class="icon icon-github">Agorakube</a>
+      
+        <a href="https://github.com/ilkilab/agorakube-docs/tree/master/www/docs/main/parameters.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="agorakube-parameters">Agorakube Parameters<a class="headerlink" href="#agorakube-parameters" title="Permanent link">&para;</a></h1>
+<p>Below  you can find all the parameters you can use in this file, section by section.</p>
+<h3 id="certificates-section">Certificates section<a class="headerlink" href="#certificates-section" title="Permanent link">&para;</a></h3>
+<p>This section is used to custom certificates information.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cn_root_ca</code></td>
+<td>Certificate authority name</td>
+<td><ul><li> <strong>Depend on your deployment</strong> </li><br/><li>  <strong>ilkilabs</strong> <em>(default)</em> </li></ul></td>
+</tr>
+<tr>
+<td><code>c</code></td>
+<td>Country where the certificate is issued</td>
+<td><ul><li> <strong>Depend on your deployment</strong> </li><br/><li>  <strong>FR</strong> <em>(default)</em> </li></ul></td>
+</tr>
+<tr>
+<td><code>st</code></td>
+<td>State where the certificate is issued</td>
+<td><ul><li> <strong>Depend on your deployment</strong> </li><br/><li>  <strong>Ile-de-France</strong> <em>(default)</em> </li></ul></td>
+</tr>
+<tr>
+<td><code>l</code></td>
+<td>City where the certificate is issued</td>
+<td><ul><li> <strong>Depend on your deployment</strong> </li><br/><li>  <strong>Paris</strong> <em>(default)</em> </li></ul></td>
+</tr>
+<tr>
+<td><code>expiry</code></td>
+<td>Certificate lifetime in hours</td>
+<td><ul><li> <strong>Depend on your needs</strong> </li><br/><li>  <strong>87600h</strong> <em>(default)</em> </li></ul></td>
+</tr>
+<tr>
+<td><code>rotate_full_pki</code></td>
+<td>Update all the PKI (crts, keys and crs) of your cluster. You will need to regenerate manually your Service Account Tokens, and relaunch all pods that are using them</td>
+<td><ul><li> <strong>false</strong> <em>(default)</em> </li><br/><li>  <strong>true</strong> </li></ul></td>
+</tr>
+<tr>
+<td><code>rotate_certs_pki</code></td>
+<td>Rotate certificates for your cluster</td>
+<td><ul><li> <strong>false</strong> <em>(default)</em> </li><br/><li>  <strong>true</strong> </li></ul></td>
+</tr>
+<tr>
+<td>### Components version section</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>This section is used to custom the components version of your deployment.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>etcd_release</code></td>
+<td>Version of etcd component</td>
+<td><ul><li> <strong>3.3.X</strong> or <strong>3.4.X</strong> </li><br/><li>  <strong>3.4.5</strong> <em>(default)</em> </li></ul></td>
+</tr>
+<tr>
+<td><code>kubernetes_release</code></td>
+<td>Version of kubernetes components</td>
+<td><ul><li> <strong>1.15.X</strong>, <strong>1.16.X</strong>, <strong>1.17.X</strong> or <strong>1.18.X</strong> </li><br/><li>  <strong>1.18.0</strong> <em>(default)</em> </li></ul></td>
+</tr>
+<tr>
+<td><code>delete_previous_k8s_install</code></td>
+<td>Deletion of previous installations of Kubernetes</td>
+<td><ul><li> <strong>true</strong> </li><br/><li>  <strong>false</strong> <em>(default)</em> </li></ul></td>
+</tr>
+</tbody>
+</table>
+<h3 id="ips-cidr-configurations">IPs-CIDR Configurations<a class="headerlink" href="#ips-cidr-configurations" title="Permanent link">&para;</a></h3>
+<p>This section is used to custom network configurations of your deployment.</p>
+<p><strong>Note :</strong> It will depend on the CNI plugin used.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cluster_cidr</code></td>
+<td>CIDR used for all pods deployed in your cluster</td>
+<td><ul><li> <strong>Depend on your deployment</strong> </li><br/><li>  <strong>10.33.0.0/16</strong> <em>(default)</em> </li></ul></td>
+</tr>
+<tr>
+<td><code>service_cluster_ip_range</code></td>
+<td>CIDR used for all services deployed in your cluster</td>
+<td><ul><li> <strong>Depend on your deployment</strong> </li><br/><li>   <strong>10.32.0.0/16</strong> <em>(default)</em> </li></ul></td>
+</tr>
+<tr>
+<td><code>kubernetes_service</code></td>
+<td>IP used for Kubernetes service of your cluster. <strong>Must be</strong> the first IP of your service CIDR !</td>
+<td><ul><li> <strong>Depend on your deployment</strong> </li><br/><li>  <strong>10.32.0.1</strong> <em>(default)</em> </li></ul></td>
+</tr>
+<tr>
+<td><code>cluster_dns_ip</code></td>
+<td>IP used for DNS services deployed in your cluster</td>
+<td><ul><li> <strong>Depend on your deployment</strong> </li><br/><li>  <strong>10.32.0.10</strong> <em>(default)</em> </li></ul></td>
+</tr>
+<tr>
+<td><code>service_node_port_range</code></td>
+<td>Range of ports used for all NodePort services deployed in your cluster</td>
+<td><ul><li> <strong>depend on your deployment</strong> </li><br/><li>   <strong>30000-32767</strong> <em>(default)</em> </li></ul></td>
+</tr>
+<tr>
+<td><code>kube_proxy_mode</code></td>
+<td>Configure kube-proxy mode</td>
+<td><ul><li> <strong>ipvs (default)</strong> </li><br/><li>   <strong>iptables</strong> </li><br/><li>   <strong>userspace</strong></li></ul></td>
+</tr>
+<tr>
+<td><code>kube_proxy_ipvs_algotithm</code></td>
+<td>Load Balancing algorithm for <em>IPVS Kube-proxy</em> mode</td>
+<td><ul><li> <strong>rr</strong> <em>(default - round-robin)</em></li><br/><li>   <strong>lc</strong> (least connection) </li><br/><li>   <strong>dh</strong> <em>(destination hashing)</em> </li><br/><li>   <strong>sh</strong> <em>(source hashing)</em> </li><br/><li>   <strong>sed</strong> <em>(shortest expected delay)</em> </li><br/><li>   <strong>nq</strong> <em>(never queue)</em> </li></ul></td>
+</tr>
+</tbody>
+</table>
+<h3 id="custom-features-section">Custom features section<a class="headerlink" href="#custom-features-section" title="Permanent link">&para;</a></h3>
+<p>This section is used to defined all custom features of your deployment.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>runtime</code></td>
+<td>Container runtime used in your deployment</td>
+<td><ul><li> <strong>containerd</strong> <em>(default)</em> </li><br/><li>  <strong>docker</strong>  </li></ul></td>
+</tr>
+<tr>
+<td><code>network_cni_plugin</code></td>
+<td>CNI plugin used in your deployment</td>
+<td><ul><li> <strong>calico</strong> </li><br/><li> <strong>flannel</strong> </li><br/><li>  <strong>kube-router</strong> <em>(default)</em> </li></ul></td>
+</tr>
+<tr>
+<td><code>flannel_iface</code></td>
+<td>Indicate to Flannel the specific iface to be binded</td>
+<td><ul><li> <strong>default</strong> <em>(default - take the first iface)</em> </li><br/><li>  <strong>Specific Iface</strong></li></ul></td>
+</tr>
+<tr>
+<td><code>ingress_controller</code></td>
+<td>Ingress Controller used in your deployment</td>
+<td><ul><li> <strong>traefik</strong> <em>(default)</em> </li><br/><li>  <strong>ha-proxy</strong>  </li><br/><li>  <strong>nginx</strong>  </li><br/><li>  <strong>none</strong>  </li></ul></td>
+</tr>
+<tr>
+<td><code>dns_server_soft</code></td>
+<td>DNS service used in your deployment</td>
+<td><ul><li> <strong>CoreDNS</strong> <em>(default)</em> </li></ul></td>
+</tr>
+<tr>
+<td><code>label_workers</code></td>
+<td>Fixed the label <em>node-role.kubernetes.io/worker</em> to all workers in your cluster</td>
+<td><ul><li> <strong>false</strong> </li><br/><li>  <strong>true</strong> <em>(default)</em> </li></ul></td>
+</tr>
+<tr>
+<td><code>populate_etc_hosts</code></td>
+<td>Populate <em>/etc/hosts</em> file of all your nodes in the cluster</td>
+<td><ul><li> <strong>no</strong> </li><br/><li>  <strong>yes</strong> <em>(default)</em> </li></ul></td>
+</tr>
+<tr>
+<td><code>k8s_dashboard</code></td>
+<td>Deploy Kubernetes dashboard in your cluster</td>
+<td><ul><li> <strong>false</strong> </li><br/><li>  <strong>true</strong> <em>(default)</em> </li></ul></td>
+</tr>
+<tr>
+<td><code>service_mesh</code></td>
+<td>Service mesh used in your cluster</td>
+<td><ul><li> <strong>none</strong> <em>(default)</em> </li><br/><li>  <strong>linkerd</strong> </li></ul></td>
+</tr>
+<tr>
+<td><code>linkerd_release</code></td>
+<td>Version of LinkerD used in your cluster</td>
+<td><ul><li> <strong>stable-2.6.0</strong> <em>(default)</em> </li><br/><li>  <strong>none</strong> </li></ul></td>
+</tr>
+<tr>
+<td><code>install_helm</code></td>
+<td>Helm installation in your cluster</td>
+<td><ul><li> <strong>false</strong> <em>(default)</em> </li><br/><li>  <strong>true</strong> </li></ul></td>
+</tr>
+<tr>
+<td><code>init_helm</code></td>
+<td>Initialization of Helm</td>
+<td><ul><li> <strong>false</strong> <em>(default)</em> </li><br/><li>  <strong>true</strong> </li></ul></td>
+</tr>
+<tr>
+<td><code>install_kubeapps</code></td>
+<td>Installation of Kubeapps - <strong>install_helm</strong> and <strong>init_helm</strong> have to be <strong>true</strong> also.</td>
+<td><ul><li> <strong>false</strong> <em>(default)</em> </li><br/><li>  <strong>true</strong> </li></ul></td>
+</tr>
+</tbody>
+</table>
+<h3 id="other-parameters-sections">Other parameters sections<a class="headerlink" href="#other-parameters-sections" title="Permanent link">&para;</a></h3>
+<p>Parameters for Calico CNI plugin :</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>calico_mtu</code></td>
+<td>MTU size to used in your deployment</td>
+<td><ul><li> <strong>Depend on your needs</strong> </li><br/><li>  <strong>1440</strong> <em>(default)</em> </li></ul></td>
+</tr>
+</tbody>
+</table>
+<p>Parameters for etcd :</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>encrypt_etcd_keys</code></td>
+<td>Encryption keys used for etcd - Dictionary format</td>
+<td><ul><li> <strong>Depend on your deployment</strong> </li><br/><li>  <strong>1fJcKt6vBxMt+AkBanoaxFF2O6ytHIkETNgQWv4b/+Q=</strong> <em>(default)</em> </li></ul></td>
+</tr>
+<tr>
+<td><code>check_etcd_install</code></td>
+<td>Display ETCD infos</td>
+<td><ul><li> <strong>True</strong> (Default) </li><br/><li>  False </li></ul></td>
+</tr>
+</tbody>
+</table>
+<p>Parameters for Agorakube datas storage :</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data_path</code></td>
+<td>Path to Agorakube datas directory</td>
+<td><ul><li> <strong>Depend on your deployment</strong> </li><br/><li> <strong>"/var/agorakube"</strong> <em>(default)</em> </li></ul></td>
+</tr>
+</tbody>
+</table>
+<p>Parameters for etcd data location, and backups</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>etcd_data_directory</code></td>
+<td>Directory to store etcd data on <strong>etcd members</strong></td>
+<td><ul><li> <strong>/var/lib/etcd/</strong> (default) </li><br/></ul></td>
+</tr>
+<tr>
+<td><code>custom_etcd_backup_dir</code></td>
+<td>Directory where etcd leader backups are stored on <strong>deploy</strong> node</td>
+<td><ul><li> <strong>{{data_path}}/backups_etcd/</strong> (default if not defined) </li><br/></ul></td>
+</tr>
+<tr>
+<td><code>restoration_snapshot_file</code></td>
+<td>Path to the etcd snapshot on <strong>deploy</strong> node</td>
+<td><ul><li> <strong>not defined</strong> (default) </li><br/></ul></td>
+</tr>
+</tbody>
+</table>
+<p>Rook Settings</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>enable_rook</code></td>
+<td>Deploy Rook Ceph cluster on <strong>storage members</strong></td>
+<td><ul><li> <strong>False</strong> (default) </li><br/><li>  <strong>True</strong> </li></ul></td>
+</tr>
+<tr>
+<td><code>rook_dataDirHostPath</code></td>
+<td>Directory where Rook data are stored on <strong>Storage</strong> nodes</td>
+<td><ul><li> <strong>/data/rook</strong> (default) </li><br/></ul></td>
+</tr>
+<tr>
+<td><code>enable_rook_minio</code></td>
+<td>Deploy Rook MinIO cluster on <strong>Rook Ceph Cluster</strong></td>
+<td><ul><li> <strong>False</strong> (default) </li><br/><li>  <strong>True</strong> </li></ul></td>
+</tr>
+<tr>
+<td><code>rook_minio_infra_access_key</code></td>
+<td>MinIO Admin Access Key</td>
+<td><ul><li> <strong>admin_minio</strong> (default) </li><br/></ul></td>
+</tr>
+<tr>
+<td><code>rook_minio_infra_secret_key</code></td>
+<td>MinIO Admin Secret Key</td>
+<td><ul><li> <strong>password_minio</strong> (default) </li><br/></ul></td>
+</tr>
+</tbody>
+</table>
+<p>Harbor Settings</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>install_harbor</code></td>
+<td>Deploy Harbor Registry - Warrning : <strong>Rook Must be enabled !</strong></td>
+<td><ul><li> <strong>False</strong> (default) </li><br/><li>  <strong>true</strong> </li></ul></td>
+</tr>
+<tr>
+<td><code>harbor_admin_password</code></td>
+<td>Admin password for Harbor UI</td>
+<td><ul><li> <strong>ChangeMe!</strong> (default) </li></ul></td>
+</tr>
+<tr>
+<td><code>harbor_ingress_host</code></td>
+<td>Host entry in Ingress. Harbor will be expose at <strong>https://{{ harbor_ingress_host }}</strong> (Depend on your ingress configuration)</td>
+<td><ul><li> harbor.ilkilabs.io (default) </li></ul></td>
+</tr>
+<tr>
+<td><code>notary_ingress_host</code></td>
+<td>Host entry in Ingress. Notary will be expose at <strong>https://{{ notary.ilkilabs.io }}</strong> (Depend on your ingress configuration)</td>
+<td><ul><li> <strong>notary.ilkilabs.io</strong> (default) </li></ul></td>
+</tr>
+</tbody>
+</table>
+<p>Monitoring Settings</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>enable_monitoring</code></td>
+<td>Deploy monitoring - Warrning : <strong>Rook Must be enabled !</strong></td>
+<td><ul><li> <strong>False</strong> (default) </li><br/><li>  <strong>true</strong> </li></ul></td>
+</tr>
+</tbody>
+</table>
+<p>Others settings:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kube_apiserver_enable_admission_plugins</code></td>
+<td>List of admission plugins to be enabled</td>
+<td><ul><li> <strong>Depend on your deployment</strong> </li><br/></ul></td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+
+<footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../etcd_management/" class="btn btn-neutral float-right" title="Manage ETCD">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../configurations/" class="btn btn-neutral" title="Configuration"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright  &#169; 2020  <a href="https://www.ilki.fr/">ILKI - ILKILABS</a></p>
+    
+    
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/ilkilab/agorakube" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/ClouDesigner" target="_blank" rel="noopener" title="twitter" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.linkedin.com/company/ilki" target="_blank" rel="noopener" title="linkedin" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+  </div>
+
+</footer>
+
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+          <a href="https://github.com/ilkilab/agorakube" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+
+      
+        <span><a href="../configurations/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../etcd_management/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
