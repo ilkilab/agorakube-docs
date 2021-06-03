@@ -16,4 +16,4 @@ Based on __Infrastructure As Code__ (IaC) Ansible playbooks and roles, Agorakube
 
 Currently, Ubuntu 18.04, 20.04 amd64, Centos 7 and Debian 10 are supported, but several other operating systems will be available soon.
 
-Feel free to contribute
+Feel free to contribute.
